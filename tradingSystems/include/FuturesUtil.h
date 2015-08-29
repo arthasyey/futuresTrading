@@ -3,7 +3,7 @@
 
 #include <string>
 #include "FuturesDataStructures.h"
-#include "../CTPLib/ThostTraderApi/ThostFtdcUserApiStruct.h"
+#include "../ctp/ThostFtdcUserApiStruct.h"
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/algorithm/string.hpp>
 #include <boost/format.hpp>
@@ -23,7 +23,7 @@ template<typename T> string toString(T val){
 	return ss.str();
 }
 
-struct FuturesUtil{
+struct FuturesUtil {
 	/************************************************************************/
 	/* Translating the CTP data structures                                                                     */
 	/************************************************************************/

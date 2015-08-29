@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS:=-std=gnu++11 -g -o3 -c -Wall -Wnon-pod-varargs
+CFLAGS:=-std=gnu++11 -g -o3 -c -Wall 
 LDFLAGS=
 SOURCES=main.cpp tradeHandler.cpp ../src/FuturesUtil.cpp ../src/logging.cpp ../src/FuturesTraderSpi.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
@@ -11,7 +11,7 @@ INCLUDES += -I/usr/local/Cellar/boost/1.58.0/include/
 all: $(SOURCES) $(EXECUTABLE)
     
 $(EXECUTABLE): $(OBJECTS) 
-	$(CC) $(LDFLAGS) $(OBJECTS) $(LIBS) ../libs/thosttraderapi.so -o $@
+	$(CC) $(LDFLAGS) $(OBJECTS) $(LIBS) ../ctp/thosttraderapi.so -o $@
 
 .cpp.o:
 	$(CC) -v $(CFLAGS) $(INCLUDES) $< -o $@
