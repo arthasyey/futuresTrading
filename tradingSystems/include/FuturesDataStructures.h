@@ -6,7 +6,7 @@
 #include <boost/lexical_cast.hpp>    
 #include <boost/algorithm/string/split.hpp>  
 #include <boost/algorithm/string/classification.hpp>  
-#include "../CTPLib/ThostTraderApi/ThostFtdcUserApiStruct.h"
+#include "../ctp/ThostFtdcUserApiStruct.h"
 
 using namespace std;
 

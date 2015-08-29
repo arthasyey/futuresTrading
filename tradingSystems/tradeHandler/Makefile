@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS:=-std=gnu++11 -g -o3 -c -Wall -Wnon-pod-varargs
+CFLAGS:=-std=gnu++11 -g -o3 -c -Wall 
 LDFLAGS=
 SOURCES=main.cpp tradeHandler.cpp ../src/FuturesUtil.cpp ../src/logging.cpp ../src/FuturesTraderSpi.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
