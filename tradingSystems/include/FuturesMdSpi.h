@@ -4,7 +4,7 @@
 #include <mutex>
 #include <condition_variable>
 
-#include "../CTPLib/ThostTraderApi/ThostFtdcMdApi.h"
+#include "../ctp/ThostFtdcMdApi.h"
 #include "FuturesDataStructures.h"
 
 

@@ -11,7 +11,7 @@ INCLUDES += -I/usr/local/Cellar/boost/1.58.0/include/
 all: $(SOURCES) $(EXECUTABLE)
     
 $(EXECUTABLE): $(OBJECTS) 
-	$(CC) $(LDFLAGS) $(OBJECTS) $(LIBS) ../libs/thosttraderapi.so -o $@
+	$(CC) $(LDFLAGS) $(OBJECTS) $(LIBS) ../ctp/thosttraderapi.so -o $@
 
 .cpp.o:
 	$(CC) -v $(CFLAGS) $(INCLUDES) $< -o $@
