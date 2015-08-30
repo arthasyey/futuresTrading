@@ -36,7 +36,6 @@
 #if (!defined(__WINDOWS__))
 #include <sys/time.h>
 #include <unistd.h>
-#include <pthread.h>
 #endif
 #include <time.h>
 #include <assert.h>
