@@ -142,6 +142,15 @@ public:
 	///请求查询仓单折抵信息响应
 	virtual void OnRspQryEWarrantOffset(CThostFtdcEWarrantOffsetField *pEWarrantOffset, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
 
+	///请求查询投资者品种/跨品种保证金响应
+	virtual void OnRspQryInvestorProductGroupMargin(CThostFtdcInvestorProductGroupMarginField *pInvestorProductGroupMargin, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
+
+	///请求查询交易所保证金率响应
+	virtual void OnRspQryExchangeMarginRate(CThostFtdcExchangeMarginRateField *pExchangeMarginRate, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
+
+	///请求查询交易所调整保证金率响应
+	virtual void OnRspQryExchangeMarginRateAdjust(CThostFtdcExchangeMarginRateAdjustField *pExchangeMarginRateAdjust, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
+
 	///请求查询转帐流水响应
 	virtual void OnRspQryTransferSerial(CThostFtdcTransferSerialField *pTransferSerial, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
 
@@ -263,8 +272,7 @@ public:
 	///创建TraderApi
 	///@param pszFlowPath 存贮订阅信息文件的目录，默认为当前目录
 	///@return 创建出的UserApi
-	//modify for udp marketdata
-	static CThostFtdcTraderApi *CreateFtdcTraderApi(const char *pszFlowPath = "", const bool bIsUsingUdp=false);
+	static CThostFtdcTraderApi *CreateFtdcTraderApi(const char *pszFlowPath = "");
 	
 	///删除接口对象本身
 	///@remark 不再使用本接口对象时,调用该函数删除接口对象
@@ -288,6 +296,17 @@ public:
 	///@remark 网络地址的格式为：“protocol://ipaddress:port”，如：”tcp://127.0.0.1:17001”。 
 	///@remark “tcp”代表传输协议，“127.0.0.1”代表服务器地址。”17001”代表服务器端口号。
 	virtual void RegisterFront(char *pszFrontAddress) = 0;
+	
+	///注册名字服务器网络地址
+	///@param pszNsAddress：名字服务器网络地址。
+	///@remark 网络地址的格式为：“protocol://ipaddress:port”，如：”tcp://127.0.0.1:12001”。 
+	///@remark “tcp”代表传输协议，“127.0.0.1”代表服务器地址。”12001”代表服务器端口号。
+	///@remark RegisterNameServer优先于RegisterFront
+	virtual void RegisterNameServer(char *pszNsAddress) = 0;
+	
+	///注册名字服务器用户信息
+	///@param pFensUserInfo：用户信息。
+	virtual void RegisterFensUserInfo(CThostFtdcFensUserInfoField * pFensUserInfo) = 0;
 	
 	///注册回调接口
 	///@param pSpi 派生自回调接口类的实例
@@ -405,6 +424,15 @@ public:
 
 	///请求查询仓单折抵信息
 	virtual int ReqQryEWarrantOffset(CThostFtdcQryEWarrantOffsetField *pQryEWarrantOffset, int nRequestID) = 0;
+
+	///请求查询投资者品种/跨品种保证金
+	virtual int ReqQryInvestorProductGroupMargin(CThostFtdcQryInvestorProductGroupMarginField *pQryInvestorProductGroupMargin, int nRequestID) = 0;
+
+	///请求查询交易所保证金率
+	virtual int ReqQryExchangeMarginRate(CThostFtdcQryExchangeMarginRateField *pQryExchangeMarginRate, int nRequestID) = 0;
+
+	///请求查询交易所调整保证金率
+	virtual int ReqQryExchangeMarginRateAdjust(CThostFtdcQryExchangeMarginRateAdjustField *pQryExchangeMarginRateAdjust, int nRequestID) = 0;
 
 	///请求查询转帐流水
 	virtual int ReqQryTransferSerial(CThostFtdcQryTransferSerialField *pQryTransferSerial, int nRequestID) = 0;
