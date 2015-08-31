@@ -1,0 +1,9 @@
+TraderFrontAddr=tcp://180.168.212.51:41205
+MdFrontAddr=tcp://180.168.212.51:41213
+BrokerId=88888
+UserId=8611204710
+Password=171419
+MdBrokerId=88888
+MdUserId=8611204710
+MdPassword=171419
+Contract=IF1509
