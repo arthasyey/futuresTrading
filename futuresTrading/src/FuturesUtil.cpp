@@ -70,6 +70,8 @@ string FuturesUtil::getCurrentDateString() {
   if (month < 10)
     ss << 0;
   ss << month;
+  if (day < 10)
+    ss << 0;
   ss << day;
 #endif
   return ss.str();
