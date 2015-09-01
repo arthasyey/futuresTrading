@@ -12,8 +12,24 @@ MySqlConnector::MySqlConnector() :driver(sql::mysql::get_mysql_driver_instance()
   }
 }
 
+void MySqlConnector::reconnectIfExpired() {
+	try {
+		if (state == NULL || con == NULL)
+		{
+		con = driver->connect(MYSQL_END_POINT, MYSQL_USER_NAME, MYSQL_PASSWORD);
+		state = con->createStatement();
+		//state->execute("SET NAMES gb2312");
+        }
+	}
+	catch (exception &e) {
+		flatLogging("Reconnect Exception: " + string(e.what()));
+	}
+}
+
+
 ResultSet* MySqlConnector::queryWithoutRetry(const string& qry){
   try {
+    reconnectIfExpired();
     return state->executeQuery(qry);
   }
   catch (SQLException &e){
@@ -24,6 +40,7 @@ ResultSet* MySqlConnector::queryWithoutRetry(const string& qry){
 
 bool MySqlConnector::executeWithoutRetry(const string& qry) {
   try {
+    reconnectIfExpired();
     return state->execute(qry);
   }
   catch (SQLException &e){
@@ -34,6 +51,7 @@ bool MySqlConnector::executeWithoutRetry(const string& qry) {
 
 bool MySqlConnector::excuteUpdateWithoutRetry(const string& qry) {
   try {
+    reconnectIfExpired();
     return state->executeUpdate(qry);
   }
   catch (SQLException &e){
@@ -47,6 +65,7 @@ ResultSet* MySqlConnector::query(const string& qry){
   try
   {
     flatLogging("Query: " + qry);
+    reconnectIfExpired();
     return state->executeQuery(qry);
   }
   catch (SQLException& e)
@@ -60,6 +79,7 @@ bool MySqlConnector::execute(const string& qry) {
   try
   {
     flatLogging("Query: " + qry);
+    reconnectIfExpired();
     return state->execute(qry);
   }
   catch (SQLException& e)
@@ -77,6 +97,7 @@ bool MySqlConnector::execute(const string& qry) {
 int MySqlConnector::executeUpdate(const string& qry) {
   try {
     flatLogging("Query: " + qry);
+    reconnectIfExpired();
     return state->executeUpdate(qry);
   }
   catch (SQLException& e)
@@ -86,4 +107,7 @@ int MySqlConnector::executeUpdate(const string& qry) {
   }
 }
 
-MySqlConnector::~MySqlConnector() {}
+MySqlConnector::~MySqlConnector() {
+  delete con;
+  delete state;
+}

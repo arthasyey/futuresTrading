@@ -24,6 +24,7 @@ private:
   mysql::MySQL_Driver *driver;
   Connection *con;
   Statement *state;
+  void reconnectIfExpired();
 
 public:
   MySqlConnector();
