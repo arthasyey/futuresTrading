@@ -14,7 +14,7 @@ MyTraderSpi::MyTraderSpi(const FuturesConfigInfo& _config) : config(_config) {
   pTraderApi->SubscribePrivateTopic(THOST_TERT_QUICK);
   pTraderApi->RegisterSpi(this);
   pTraderApi->RegisterFront(const_cast<char*>(config.TraderFrontAddr.c_str()));
-  BOOST_LOG_SEV(lg, info) << __func__ << config.toString();
+  BOOST_LOG_SEV(lg, info) << __PRETTY_FUNCTION__ << config.toString();
   pTraderApi->Init();
 }
 
@@ -26,7 +26,7 @@ void MyTraderSpi::OnFrontConnected() {
   strcpy(req.Password, config.Password.c_str());
 
   int iResult = pTraderApi->ReqUserLogin(&req, ++requestId);
-  BOOST_LOG_SEV(lg, info) << "--->>>" << __func__ << ((iResult == 0) ? "success" : "failure") << endl;
+  BOOST_LOG_SEV(lg, info) << "--->>>" << __PRETTY_FUNCTION__ << ((iResult == 0) ? "success" : "failure") << endl;
 }
 
 void MyTraderSpi::requestQryInstrument(const string& exchange) {
@@ -39,7 +39,7 @@ void MyTraderSpi::requestQryInstrument(const string& exchange) {
   while(UNDER_CTP_FLOW_CONTROL(ret)) {
   sleep(1);
     ret = pTraderApi->ReqQryInstrument(&reqInstrument, ++requestId);
-    BOOST_LOG_SEV(lg, info) << __func__ << " " << exchange << " return" << ret;
+    BOOST_LOG_SEV(lg, info) << __PRETTY_FUNCTION__ << " " << exchange << " return" << ret;
   }
 }
 
@@ -88,10 +88,11 @@ DataRecorder::DataRecorder(const FuturesConfigInfo& config) : traderSpi(config),
   pMdApi = CThostFtdcMdApi::CreateFtdcMdApi();
   pMdApi->RegisterSpi(this);
   pMdApi->Init();
+  pMdApi->RegisterFront(const_cast<char*>(configInfo.MdFrontAddr.c_str()));
 }
 
 void DataRecorder::OnFrontDisconnected(int nReason) {
-  BOOST_LOG_SEV(lg, info) << __func__ << " reason code: " << nReason;
+  BOOST_LOG_SEV(lg, info) << __PRETTY_FUNCTION__ << " reason code: " << nReason;
   pMdApi->RegisterFront(const_cast<char*>(configInfo.MdFrontAddr.c_str()));
 }
 
@@ -102,11 +103,11 @@ void DataRecorder::OnFrontConnected() {
   strcpy(req.UserID, configInfo.MdUserId.c_str());
   strcpy(req.Password, configInfo.MdPassword.c_str());
   int iResult = pMdApi->ReqUserLogin(&req, 0);
-  cerr << "--->>>" << __FUNCTION__ << ((iResult == 0) ? "success" : "failure") << endl;
+  cerr << "--->>>" << __PRETTY_FUNCTION__ << ((iResult == 0) ? "success" : "failure") << endl;
 }
 
 void DataRecorder::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {
-  sleep(15);
+  sleep(20);
 
   cerr << "subscribe to symbols: " << concatenate(traderSpi.instruments, ",") << endl;
   int count = traderSpi.instruments.size();
@@ -137,7 +138,6 @@ void DataRecorder::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CT
 
 
 void DataRecorder::OnRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDepthMarketData) {
-  cerr <<__FUNCTION__ <<endl;
   string instrument = pDepthMarketData->InstrumentID;
 
   int newVolume = pDepthMarketData->Volume;

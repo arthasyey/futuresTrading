@@ -808,3 +808,1017 @@
 [2015-Sep-01 00:46:38.774622]: requestQryInstrument SHFE return0
 [2015-Sep-01 00:46:40.546876]: requestQryInstrument DCE return0
 [2015-Sep-01 00:46:42.474650]: requestQryInstrument CZCE return0
+[2015-Sep-01 01:02:21.863286]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 01:02:21.866828]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 01:02:22.077027]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 01:02:22.560317]: user :: 1 :: 20150901 :: 09:02:22 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 01:02:23.560887]: requestQryInstrument CFFEX return0
+[2015-Sep-01 01:02:25.061080]: requestQryInstrument SHFE return0
+[2015-Sep-01 01:02:26.938492]: requestQryInstrument DCE return0
+[2015-Sep-01 01:02:28.916961]: requestQryInstrument CZCE return0
+[2015-Sep-01 01:09:15.614674]: MyTraderSpi::MyTraderSpi(const FuturesConfigInfo&)[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 01:09:15.617942]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 01:09:15.906962]: --->>>virtual void MyTraderSpi::OnFrontConnected()success
+
+[2015-Sep-01 01:09:16.292084]: user :: 1 :: 20150901 :: 09:09:16 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 01:09:17.293821]: void MyTraderSpi::requestQryInstrument(const string&) CFFEX return0
+[2015-Sep-01 01:09:18.725653]: void MyTraderSpi::requestQryInstrument(const string&) SHFE return0
+[2015-Sep-01 01:09:20.503292]: void MyTraderSpi::requestQryInstrument(const string&) DCE return0
+[2015-Sep-01 01:09:22.583064]: void MyTraderSpi::requestQryInstrument(const string&) CZCE return0
+[2015-Sep-01 01:11:20.768335]: MyTraderSpi::MyTraderSpi(const FuturesConfigInfo&)[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 01:11:20.770372]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 01:11:20.965111]: --->>>virtual void MyTraderSpi::OnFrontConnected()success
+
+[2015-Sep-01 01:11:21.336386]: user :: 1 :: 20150901 :: 09:11:21 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 01:11:22.337904]: void MyTraderSpi::requestQryInstrument(const string&) CFFEX return0
+[2015-Sep-01 01:11:23.734613]: void MyTraderSpi::requestQryInstrument(const string&) SHFE return0
+[2015-Sep-01 01:11:25.526362]: void MyTraderSpi::requestQryInstrument(const string&) DCE return0
+[2015-Sep-01 01:11:27.592445]: void MyTraderSpi::requestQryInstrument(const string&) CZCE return0
+[2015-Sep-01 01:11:41.546826]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.547884]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.548822]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.549967]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.551231]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.552476]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.553602]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.554797]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.555950]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.557179]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.558905]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.560066]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.561226]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.562241]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.563335]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.565368]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.566524]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.567675]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.568869]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.569994]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.571140]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.572253]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.573428]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.574459]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.575627]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.576914]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.577983]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.579267]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.580317]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.581197]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.583176]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.584601]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.585796]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.586923]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.588206]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.590117]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.591229]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.592482]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.593837]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.595164]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.596545]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.597841]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.600095]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.601326]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.602411]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.603549]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.604844]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.606004]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.607148]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.608280]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.609492]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.610578]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.611724]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.612980]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.614037]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.615491]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.616710]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.617939]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.619471]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.620749]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.622652]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.623762]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.625058]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.626373]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.627599]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.628796]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.629912]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.631318]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.632532]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.633721]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.635314]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.636616]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.637917]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.639125]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.640305]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.641411]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.642700]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.643950]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.645227]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.646369]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.647585]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.648761]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.650129]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.651436]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.652785]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.654072]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.655416]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.656993]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.658338]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.659772]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.661131]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.662352]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.663491]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.664685]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.665881]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.667121]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.668444]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.669702]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.670996]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.672153]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.673272]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.674447]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.675958]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.677088]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.678390]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.679550]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.680822]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.682081]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.683294]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.684444]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.685667]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.686820]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.687979]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.689252]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.690666]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.692073]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.693733]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.695015]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.696221]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.698025]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.699617]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.700789]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.702082]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.703012]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.704274]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.705206]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.706700]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.707970]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.709597]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.711392]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.712961]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.714062]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.715168]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.716382]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.717618]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.719032]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.720467]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.721707]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.722838]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.724181]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.725384]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.726584]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.728227]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.729773]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.730866]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.732145]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.733489]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.734592]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.735771]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.736821]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.738129]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.740036]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.741509]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.742714]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.743832]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.744783]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.746097]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.747198]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.748365]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.749553]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.750781]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.751950]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.753083]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.754394]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.755641]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.756864]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.757899]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.758869]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.759836]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.760997]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.762092]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.763209]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.764396]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.765557]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.766784]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.767718]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.768776]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.769677]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.770609]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.771723]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.772948]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.773978]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.775014]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.775905]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.776887]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.777890]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.779056]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.780033]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.781004]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.781905]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.782872]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.783905]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.784851]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.785947]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.786864]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.787945]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.788853]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.789797]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.790894]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.791860]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.792879]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.793824]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.794863]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.795943]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.796909]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.797894]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.798922]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.800125]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.801350]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.802471]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.803461]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.804462]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.805534]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.806885]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.807886]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.808972]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.810037]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.811025]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.811913]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.813123]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.813988]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.814957]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.815938]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.816880]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.817913]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.819007]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.819833]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.820854]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.821809]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.822867]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.823937]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.824678]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.825694]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.826663]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.827720]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.828759]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.829842]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.830943]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.831942]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.832923]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.833889]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.835026]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.836459]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.837649]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.838953]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.839962]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.840851]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.841902]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.843019]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.844226]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.845369]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.846421]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.847397]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.848407]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.849312]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.850460]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.851379]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.852445]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.853453]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.854491]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.855444]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.856495]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.857562]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.858531]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.859672]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.860536]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.861356]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.862445]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.863521]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.865051]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.866429]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.867948]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.869270]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.870688]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.871872]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.873212]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.874714]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.876121]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.877456]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.878770]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.880309]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.881862]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.883189]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.884367]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.885694]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.886930]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.888253]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.889606]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.891001]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.892316]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.893500]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.894924]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.896379]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.897524]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.898890]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.900231]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.901409]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.902704]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.904053]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.904783]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.905996]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.907259]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.908685]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.909910]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.911269]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.913176]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.914522]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.915836]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.917024]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.918330]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.919547]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.921011]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.923051]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.924288]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.925462]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.926607]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.928018]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.929351]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.930718]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.931867]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.933174]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.934132]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.936597]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.937978]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:41.939222]: Exception at construction: Too many connections
+[2015-Sep-01 01:11:43.096282]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:59, UpdateMillisec: 674, LastPrice: 4070, BidPrice1: 4020, BidVolume1: 1, AskPrice1: 4198, AskVolume1: 1]
+[2015-Sep-01 01:11:43.096947]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:59, UpdateMillisec: 674, LastPrice: 4070, BidPrice1: 4020, BidVolume1: 1, AskPrice1: 4198, AskVolume1: 1]
+
+[2015-Sep-01 01:11:43.098386]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:25:20, UpdateMillisec: 546, LastPrice: 2948, BidPrice1: 2905, BidVolume1: 5, AskPrice1: 3075, AskVolume1: 8]
+[2015-Sep-01 01:11:43.098792]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:25:20, UpdateMillisec: 546, LastPrice: 2948, BidPrice1: 2905, BidVolume1: 5, AskPrice1: 3075, AskVolume1: 8]
+
+[2015-Sep-01 01:11:43.099418]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 22:17:05, UpdateMillisec: 305, LastPrice: 2990, BidPrice1: 2920, BidVolume1: 1, AskPrice1: 3099, AskVolume1: 1]
+[2015-Sep-01 01:11:43.100075]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 22:17:05, UpdateMillisec: 305, LastPrice: 2990, BidPrice1: 2920, BidVolume1: 1, AskPrice1: 3099, AskVolume1: 1]
+
+[2015-Sep-01 01:11:43.100517]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:55, UpdateMillisec: 435, LastPrice: 3100, BidPrice1: 3000, BidVolume1: 1, AskPrice1: 3120, AskVolume1: 3]
+[2015-Sep-01 01:11:43.100943]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:55, UpdateMillisec: 435, LastPrice: 3100, BidPrice1: 3000, BidVolume1: 1, AskPrice1: 3120, AskVolume1: 3]
+
+[2015-Sep-01 01:11:43.101671]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 22:16:30, UpdateMillisec: 621, LastPrice: 3064, BidPrice1: 3050, BidVolume1: 1, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.102390]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 22:16:30, UpdateMillisec: 621, LastPrice: 3064, BidPrice1: 3050, BidVolume1: 1, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.102895]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:54, UpdateMillisec: 876, LastPrice: 3150, BidPrice1: 3100, BidVolume1: 1, AskPrice1: 3200, AskVolume1: 3]
+[2015-Sep-01 01:11:43.103108]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:54, UpdateMillisec: 876, LastPrice: 3150, BidPrice1: 3100, BidVolume1: 1, AskPrice1: 3200, AskVolume1: 3]
+
+[2015-Sep-01 01:11:43.103505]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:54, UpdateMillisec: 876, LastPrice: 3150, BidPrice1: 3150, BidVolume1: 1, AskPrice1: 3250, AskVolume1: 1]
+[2015-Sep-01 01:11:43.103985]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:54, UpdateMillisec: 876, LastPrice: 3150, BidPrice1: 3150, BidVolume1: 1, AskPrice1: 3250, AskVolume1: 1]
+
+[2015-Sep-01 01:11:43.104781]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 80.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.105257]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 80.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.105838]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 79.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.106208]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 79.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.106840]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 78.95, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.107356]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 78.95, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.108112]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 80.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.108482]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 80.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.109088]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 92.3, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.109670]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 92.3, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.110438]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 93.7, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.111089]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 93.7, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.111689]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 95.85, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.112004]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 95.85, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.112445]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 93.4, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.113004]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 93.4, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.115180]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 63.3, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.115503]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 63.3, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.116463]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 45.45, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.117139]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 45.45, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.117684]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 52.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.117998]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 52.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.118660]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 55.9, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.119056]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 55.9, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.237602]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 5420, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.238297]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 5420, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.238766]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 5315, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:11:43.239117]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 5315, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.243043]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 3100, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.243381]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 3100, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.243914]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 3245, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.244303]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 3245, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.244844]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 3244, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.245271]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 3244, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.245945]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2644, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.246452]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2644, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.247090]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2629, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.247582]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2629, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.248130]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2599, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.248645]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2599, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.249373]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:25:21, UpdateMillisec: 0, LastPrice: 1907, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.250050]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:25:21, UpdateMillisec: 0, LastPrice: 1907, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.293205]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2447, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.295475]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2447, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.297362]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2400, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.299927]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2400, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.301245]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2385, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.302921]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2385, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.307055]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 1948, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.308340]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 1948, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.311322]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4408, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.312375]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4408, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.314294]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4334, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.319949]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4334, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.324096]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4510, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.326907]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4510, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.330215]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4792, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.331033]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4792, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.332575]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4540, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.333447]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4540, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.336602]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.337542]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.339173]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4976, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.340412]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4976, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.342407]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.343618]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.345739]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.347804]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.349865]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.350414]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.351050]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 5188, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.351802]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 5188, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.352853]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4944, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.354313]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4944, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.356689]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 5070, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.358370]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 5070, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.359511]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4950, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.360487]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4950, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.363049]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4302, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.363663]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4302, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.364797]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4154, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.365889]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4154, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.366826]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4616, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.368158]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4616, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.369873]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4164, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.370430]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4164, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.371903]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4000, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.372461]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4000, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.373484]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4698, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.374588]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4698, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.375923]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4630, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.376500]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4630, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:11:43.397045]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 20:59:00, UpdateMillisec: 0, LastPrice: 356, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:11:43.397265]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 20:59:00, UpdateMillisec: 0, LastPrice: 356, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:14.534868]: MyTraderSpi::MyTraderSpi(const FuturesConfigInfo&)[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 01:12:14.540129]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 01:12:15.769079]: --->>>virtual void MyTraderSpi::OnFrontConnected()success
+
+[2015-Sep-01 01:12:16.181182]: user :: 1 :: 20150901 :: 09:12:16 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 01:12:17.182824]: void MyTraderSpi::requestQryInstrument(const string&) CFFEX return0
+[2015-Sep-01 01:12:18.559182]: void MyTraderSpi::requestQryInstrument(const string&) SHFE return0
+[2015-Sep-01 01:12:20.464605]: void MyTraderSpi::requestQryInstrument(const string&) DCE return0
+[2015-Sep-01 01:12:22.412401]: void MyTraderSpi::requestQryInstrument(const string&) CZCE return0
+[2015-Sep-01 01:12:35.319563]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.320531]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.321563]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.322647]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.323886]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.325091]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.326633]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.327952]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.329073]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.330259]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.331344]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.332464]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.333599]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.334968]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.336289]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.337559]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.338983]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.340436]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.341821]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.343127]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.344617]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.345957]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.347238]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.348372]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.349446]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.350734]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.351805]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.352987]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.354197]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.355422]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.356763]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.358019]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.359437]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.360569]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.361675]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.362881]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.363939]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.365076]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.366309]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.367498]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.368583]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.369856]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.371557]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.373294]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.374745]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.377029]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.378129]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.379468]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.380622]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.381915]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.383372]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.384494]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.385433]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.386960]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.388213]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.389485]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.391126]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.392486]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.393622]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.395003]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.396327]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.397484]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.398693]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.399827]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.400950]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.402298]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.403383]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.404504]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.405545]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.406933]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.408279]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.409555]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.410786]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.412066]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.413284]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.414477]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.415552]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.416846]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.418098]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.418943]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.420073]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.421263]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.422299]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.423481]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.424612]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.425776]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.427026]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.428392]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.429552]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.430761]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.432184]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.433352]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.434462]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.435461]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.436440]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.437707]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.439114]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.440364]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.441654]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.442931]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.444024]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.445236]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.446508]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.447794]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.449488]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.450847]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.452022]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.453173]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.454628]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.455753]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.457111]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.458849]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.459844]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.461203]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.462860]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.464086]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.465048]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.466252]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.467551]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.468704]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.469852]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.471252]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.473007]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.475000]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.476238]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.477499]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.478720]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.479866]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.481168]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.482343]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.483419]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.484824]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.485932]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.487290]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.488565]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.489782]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.491125]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.492218]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.493258]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.494434]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.495559]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.496463]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.497434]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.498882]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.499837]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.500837]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.501740]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.502876]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.503857]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.504793]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.505886]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.507033]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.507937]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.508916]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.509929]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.511222]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.512412]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.513916]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.515385]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.516537]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.517752]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.519106]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.520317]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.521783]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.523129]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.524532]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.525985]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.527338]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.528685]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.529921]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.531330]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.532532]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.533651]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.534789]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.536099]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.537389]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.538718]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.540074]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.541199]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.542371]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.543524]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.544685]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.545966]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.547307]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.548703]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.549980]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.551156]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.552300]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.553656]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.554736]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.556042]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.557192]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.559124]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.560580]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.561780]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.562941]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.564110]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.565228]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.566130]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.567593]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.568971]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.570439]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.571502]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.573874]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.575369]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.576845]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.577966]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.579026]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.580229]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.581349]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.582598]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.583547]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.585016]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.586499]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.587772]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.589026]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.590331]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.591477]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.592774]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.594201]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.595466]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.596962]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.597919]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.599082]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.599991]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.600987]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.602537]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.603452]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.604981]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.606396]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.607563]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.608507]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.609517]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.610632]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.612201]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.613121]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.614466]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.615348]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.616804]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.617890]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.618865]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.619810]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.620901]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.622613]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.624249]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.626025]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.626981]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.627900]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.628890]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.629860]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.631158]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.632936]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.634181]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.635087]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.636092]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.637498]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.639039]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.640436]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.642004]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.642985]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.644187]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.645972]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.646944]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.648010]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.648958]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.649862]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.651482]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.652478]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.653736]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.654739]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.656238]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.657171]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.658502]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.659452]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.661680]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.662658]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.663565]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.664659]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.666181]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.667634]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.668791]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.669954]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.671147]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.673328]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.676634]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.678901]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.680756]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.682608]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.683930]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.685265]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.686461]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.687561]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.688942]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.690078]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.691574]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.692547]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.694058]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.695033]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.696857]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.697905]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.699550]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.700620]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.701629]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.702760]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.703736]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.704575]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.705816]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.706789]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.707766]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.709310]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.710403]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.711404]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.712289]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.713245]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.714553]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.716015]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.716957]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.718481]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.719837]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.720827]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.721775]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.722754]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.724092]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.725051]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:35.726581]: Exception at construction: Too many connections
+[2015-Sep-01 01:12:36.700034]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:59, UpdateMillisec: 674, LastPrice: 4070, BidPrice1: 4020, BidVolume1: 1, AskPrice1: 4198, AskVolume1: 1]
+[2015-Sep-01 01:12:36.701329]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:59, UpdateMillisec: 674, LastPrice: 4070, BidPrice1: 4020, BidVolume1: 1, AskPrice1: 4198, AskVolume1: 1]
+
+[2015-Sep-01 01:12:36.702729]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:25:20, UpdateMillisec: 546, LastPrice: 2948, BidPrice1: 2905, BidVolume1: 5, AskPrice1: 3075, AskVolume1: 8]
+[2015-Sep-01 01:12:36.704452]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:25:20, UpdateMillisec: 546, LastPrice: 2948, BidPrice1: 2905, BidVolume1: 5, AskPrice1: 3075, AskVolume1: 8]
+
+[2015-Sep-01 01:12:36.705756]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 22:17:05, UpdateMillisec: 305, LastPrice: 2990, BidPrice1: 2920, BidVolume1: 1, AskPrice1: 3099, AskVolume1: 1]
+[2015-Sep-01 01:12:36.706760]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 22:17:05, UpdateMillisec: 305, LastPrice: 2990, BidPrice1: 2920, BidVolume1: 1, AskPrice1: 3099, AskVolume1: 1]
+
+[2015-Sep-01 01:12:36.708101]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:55, UpdateMillisec: 435, LastPrice: 3100, BidPrice1: 3000, BidVolume1: 1, AskPrice1: 3120, AskVolume1: 3]
+[2015-Sep-01 01:12:36.708912]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:55, UpdateMillisec: 435, LastPrice: 3100, BidPrice1: 3000, BidVolume1: 1, AskPrice1: 3120, AskVolume1: 3]
+
+[2015-Sep-01 01:12:36.710180]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 22:16:30, UpdateMillisec: 621, LastPrice: 3064, BidPrice1: 3050, BidVolume1: 1, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.711032]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 22:16:30, UpdateMillisec: 621, LastPrice: 3064, BidPrice1: 3050, BidVolume1: 1, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.712306]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:54, UpdateMillisec: 876, LastPrice: 3150, BidPrice1: 3100, BidVolume1: 1, AskPrice1: 3200, AskVolume1: 3]
+[2015-Sep-01 01:12:36.713466]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:54, UpdateMillisec: 876, LastPrice: 3150, BidPrice1: 3100, BidVolume1: 1, AskPrice1: 3200, AskVolume1: 3]
+
+[2015-Sep-01 01:12:36.714549]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:54, UpdateMillisec: 876, LastPrice: 3150, BidPrice1: 3150, BidVolume1: 1, AskPrice1: 3250, AskVolume1: 1]
+[2015-Sep-01 01:12:36.716109]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:29:54, UpdateMillisec: 876, LastPrice: 3150, BidPrice1: 3150, BidVolume1: 1, AskPrice1: 3250, AskVolume1: 1]
+
+[2015-Sep-01 01:12:36.717361]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 80.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.718089]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 80.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.719118]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 79.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.720048]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 79.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.721737]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 78.95, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.722416]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 78.95, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.723479]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 80.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.723848]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 80.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.724248]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 92.3, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.724601]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 92.3, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.725021]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 93.7, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.725378]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 93.7, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.725853]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 95.85, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.726237]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 95.85, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.726792]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 93.4, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.727243]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 93.4, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.728179]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 63.3, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.728413]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 63.3, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.728856]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 45.45, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.729256]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 45.45, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.905698]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 52.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.905938]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 52.6, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.906118]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 55.9, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.906567]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 55.9, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.916646]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 5420, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.916969]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 5420, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.917325]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 5315, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+[2015-Sep-01 01:12:36.918355]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:08:45, UpdateMillisec: 0, LastPrice: 5315, BidPrice1: 1.79769e+308, BidVolume1: 0, AskPrice1: 1.79769e+308, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.919717]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 3100, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.919983]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 3100, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.920407]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 3245, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.920684]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 3245, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.921063]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 3244, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.921452]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 3244, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.921960]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2644, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.922309]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2644, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.922647]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2629, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.923101]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2629, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.923578]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2599, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.923935]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2599, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.924453]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:25:21, UpdateMillisec: 0, LastPrice: 1907, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.924865]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 23:25:21, UpdateMillisec: 0, LastPrice: 1907, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.925852]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2447, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.926170]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2447, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.926505]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2400, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.926782]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2400, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.927460]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2385, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.927786]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 2385, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.928269]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 1948, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.928521]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 1948, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.929371]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4408, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.929629]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4408, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.929816]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4334, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.930182]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4334, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.930457]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4510, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.930734]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4510, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.931302]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4792, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.931521]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4792, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.931900]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4540, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.932227]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4540, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.932761]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.933108]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.933689]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4976, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.934049]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4976, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.934297]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.934801]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.935411]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.935650]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.936094]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.936421]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4804, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.936789]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 5188, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.937143]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 5188, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.937605]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4944, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.937839]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4944, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.938462]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 5070, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.938756]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 5070, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.939061]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4950, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.939450]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4950, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.939872]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4302, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.940119]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4302, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:36.940607]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4154, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:36.940975]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4154, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:37.111426]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4616, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:37.112324]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4616, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:37.114016]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4164, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:37.114289]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4164, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:37.114758]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4000, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:37.115041]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4000, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:37.115596]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4698, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:37.116699]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4698, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:37.117144]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4630, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:37.117430]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 19:28:17, UpdateMillisec: 0, LastPrice: 4630, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
+[2015-Sep-01 01:12:37.118607]: First tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 20:59:00, UpdateMillisec: 0, LastPrice: 356, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+[2015-Sep-01 01:12:37.118924]: Bypassing tick: [CThostFtdcDepthMarketDataField Date: 20150901, UpdateTime: 20:59:00, UpdateMillisec: 0, LastPrice: 356, BidPrice1: 0, BidVolume1: 0, AskPrice1: 0, AskVolume1: 0]
+
