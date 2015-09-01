@@ -55,11 +55,11 @@ void MyTraderSpi::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CTh
 }
 
 void MyTraderSpi::OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {
-  if (pRspInfo == NULL)
+  if (pRspInfo == NULL && pInstrument != NULL)
   {
     if (pInstrument->ProductClass == THOST_FTDC_PC_Futures)
     {
-      cerr << "get" << pInstrument->InstrumentID << endl;
+      cerr << "get: " << pInstrument->InstrumentID << endl;
       instruments.push_back(pInstrument->InstrumentID);
     }
   }
