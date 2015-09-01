@@ -1,6 +1,8 @@
 #include "../include/mysqlConnector.h"
 #include "../include/logging.h"
 
+MySqlConnector mysqlConnector;
+
 MySqlConnector::MySqlConnector() :driver(sql::mysql::get_mysql_driver_instance()), con(NULL), state(NULL)
 {
   try {
@@ -13,17 +15,18 @@ MySqlConnector::MySqlConnector() :driver(sql::mysql::get_mysql_driver_instance()
 }
 
 void MySqlConnector::reconnectIfExpired() {
-	try {
-		if (state == NULL || con == NULL)
-		{
-		con = driver->connect(MYSQL_END_POINT, MYSQL_USER_NAME, MYSQL_PASSWORD);
-		state = con->createStatement();
-		//state->execute("SET NAMES gb2312");
+  try {
+    if (state == NULL || con == NULL)
+    {
+      cout << __PRETTY_FUNCTION__ << " " << state << " " << con << endl;
+    con = driver->connect(MYSQL_END_POINT, MYSQL_USER_NAME, MYSQL_PASSWORD);
+    state = con->createStatement();
+    //state->execute("SET NAMES gb2312");
         }
-	}
-	catch (exception &e) {
-		flatLogging("Reconnect Exception: " + string(e.what()));
-	}
+  }
+  catch (exception &e) {
+    flatLogging("Reconnect Exception: " + string(e.what()));
+  }
 }
 
 

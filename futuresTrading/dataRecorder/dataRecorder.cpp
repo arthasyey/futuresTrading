@@ -5,8 +5,6 @@
 
 vector<int> kLinePeriods = { 5, 15, 30, 60 };
 
-MySqlConnector DataRecorder::mySqlConnector;
-
 
 MyTraderSpi::MyTraderSpi(const FuturesConfigInfo& _config) : config(_config) {
   pTraderApi = CThostFtdcTraderApi::CreateFtdcTraderApi();
@@ -196,5 +194,5 @@ void MyKlineGenerator::OnNotOneMinuteKLineInserted(int periodIndex) {
 
 void DataRecorder::initTables() {
   string query = (boost::format(CREATE_KLINE_TABLE_QUERY) % FuturesUtil::getCurrentDateString()).str();
-  mySqlConnector.executeUpdate(query);
+  mysqlConnector.executeUpdate(query);
 }

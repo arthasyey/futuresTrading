@@ -29,7 +29,6 @@ protected:
   string symbol;
   vector<int> kLineMinutePeriods;
   bool stopped = false;
-  MySqlConnector mysqlConnector;
   bool isFirstTick = true;
   KLine lastOneMinuteKLine;
   vector<vector<KLine>> notOneMinuteKLines;

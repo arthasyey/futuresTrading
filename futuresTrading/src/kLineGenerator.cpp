@@ -3,6 +3,7 @@
 #include <FuturesUtil.h>
 
 extern src::severity_logger< severity_level > lg;
+extern MySqlConnector mysqlConnector;
 
 
 void KLineGenerator::feedTickData(CThostFtdcDepthMarketDataField * p) {
@@ -16,7 +17,7 @@ void KLineGenerator::feedOneMinuteKLine(const KLine& oneMinuteKLine) {
   if (dataLoadingNeededBeforeFirstOneMinKLine)
   {
     dataLoadingNeededBeforeFirstOneMinKLine = false;
-    string query = (boost::format("select * from futures.%1%K where period=1 and symbol = '%2%' and time < '%3%'") % date % symbol % oneMinuteKLine.time).str();
+    string query = (boost::format("select * from futures.%1%k where period=1 and symbol = '%2%' and time < '%3%'") % date % symbol % oneMinuteKLine.time).str();
     ResultSet* res = mysqlConnector.query(query);
     while (res && res->next())
     {
