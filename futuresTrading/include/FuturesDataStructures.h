@@ -14,6 +14,11 @@ using namespace std;
 
 #define UNDER_CTP_FLOW_CONTROL(ret) (ret == -2 || ret == -3)
 
+#define CFFEX "CFFEX"
+#define SHFEX "SHFE"
+#define DCEX  "DCE"
+#define CZCEX "CZCE"
+
 enum Direction
 {
   Long,

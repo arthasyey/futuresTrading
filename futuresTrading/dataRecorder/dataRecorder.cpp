@@ -7,7 +7,6 @@ vector<int> kLinePeriods = { 5, 15, 30, 60 };
 
 MySqlConnector DataRecorder::mySqlConnector;
 
-MyKlineGenerator::MyKlineGenerator(const string& contract) : KLineGenerator(FuturesUtil::getCurrentDateString(), contract, kLinePeriods){}
 
 MyTraderSpi::MyTraderSpi(const FuturesConfigInfo& _config) : config(_config) {
   pTraderApi = CThostFtdcTraderApi::CreateFtdcTraderApi();
@@ -26,8 +25,22 @@ void MyTraderSpi::OnFrontConnected() {
   strcpy(req.UserID, config.UserId.c_str());
   strcpy(req.Password, config.Password.c_str());
 
-  int iResult = pTraderApi->ReqUserLogin(&req, 1);
+  int iResult = pTraderApi->ReqUserLogin(&req, ++requestId);
   BOOST_LOG_SEV(lg, info) << "--->>>" << __func__ << ((iResult == 0) ? "success" : "failure") << endl;
+}
+
+void MyTraderSpi::requestQryInstrument(const string& exchange) {
+  struct CThostFtdcQryInstrumentField reqInstrument;
+  memset(&reqInstrument, 0, sizeof(reqInstrument));
+  strcpy(reqInstrument.ExchangeID, exchange.c_str());
+  lastExchangeStr = exchange;
+
+  int ret = -2;
+  while(UNDER_CTP_FLOW_CONTROL(ret)) {
+  sleep(1);
+    ret = pTraderApi->ReqQryInstrument(&reqInstrument, ++requestId);
+    BOOST_LOG_SEV(lg, info) << __func__ << " " << exchange << " return" << ret;
+  }
 }
 
 void MyTraderSpi::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {
@@ -38,10 +51,7 @@ void MyTraderSpi::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CTh
       << pRspUserLogin->UserID << " :: "
       << pRspUserLogin->SystemName << endl;
 
-  struct CThostFtdcQryInstrumentField reqInstrument;
-  memset(&reqInstrument, 0, sizeof(reqInstrument));
-  strcpy(reqInstrument.ExchangeID, "CFFEX");
-  pTraderApi->ReqQryInstrument(&reqInstrument, 2);
+  requestQryInstrument("CFFEX");
 }
 
 void MyTraderSpi::OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {
@@ -60,7 +70,14 @@ void MyTraderSpi::OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CTh
   }
   if (bIsLast)
   {
-    cerr << "finish req instrument ... " << endl;
+    if(lastExchangeStr == CFFEX )
+      requestQryInstrument(SHFEX);
+    else if (lastExchangeStr == SHFEX)
+      requestQryInstrument(DCEX);
+    else if (lastExchangeStr == DCEX)
+      requestQryInstrument(CZCEX);
+    else
+      cerr << "finish req instrument ... " << endl;
     return;
   }
 }
@@ -144,6 +161,8 @@ void DataRecorder::OnRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDepthMa
   klineGenerators[instrument]->feedTickData(pDepthMarketData);
 }
 
+MyKlineGenerator::MyKlineGenerator(const string& contract) : KLineGenerator(FuturesUtil::getCurrentDateString(), contract, kLinePeriods){}
+
 void MyKlineGenerator::OnOneMinuteKLineInserted() {
   string query = (boost::format(INSERT_KLINE_QUERY)
   % lastOneMinuteKLine.date
@@ -170,8 +189,7 @@ void MyKlineGenerator::OnNotOneMinuteKLineInserted(int periodIndex) {
                  % lastKLine.high
                  % lastKLine.low
                  % lastKLine.close
-                 % lastKLine.volume
-                 % lastKLine.tickCount).str();
+                 % lastKLine.volume).str();
   mysqlConnector.executeUpdate(query);
 }
 

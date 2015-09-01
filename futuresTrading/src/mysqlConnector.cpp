@@ -8,7 +8,7 @@ MySqlConnector::MySqlConnector() :driver(sql::mysql::get_mysql_driver_instance()
     state = con->createStatement();
   }
   catch (exception& e) {
-    flatLogging("Exception at construction: " + string(e.what()) + e.getSQLState() + " when query: " + qry);
+    flatLogging("Exception at construction: " + string(e.what()));
   }
 }
 

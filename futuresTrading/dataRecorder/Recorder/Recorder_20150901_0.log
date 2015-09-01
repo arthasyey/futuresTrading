@@ -1,0 +1,810 @@
+[2015-Sep-01 00:00:42.490609]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:00:42.494818]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:00:42.709520]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:00:43.161646]: user :: 1 :: 20150901 :: 08:00:43 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:01:11.028322]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:01:11.030496]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:01:11.218403]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:01:11.582014]: user :: 1 :: 20150901 :: 08:01:11 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:04:02.227159]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:04:02.229508]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:04:02.422348]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:04:02.812620]: user :: 1 :: 20150901 :: 08:04:02 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:04:02.813480]: ret0:0 ret1:-2 ret2:-2 ret3:-2
+[2015-Sep-01 00:06:20.235502]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:06:20.242606]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:06:20.540722]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:06:20.907285]: user :: 1 :: 20150901 :: 08:06:20 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:06:35.608299]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:06:35.615758]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:06:35.812931]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:06:36.183646]: user :: 1 :: 20150901 :: 08:06:36 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:07:11.540613]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:07:11.543751]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:07:11.810275]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:07:12.319981]: user :: 1 :: 20150901 :: 08:07:12 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:07:12.320373]: ret0:0 ret1:-2 ret2:-2 ret3:-2
+[2015-Sep-01 00:08:01.102554]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:08:01.104494]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:08:01.297619]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:08:01.686252]: user :: 1 :: 20150901 :: 08:08:01 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:08:01.687903]: ret0:0 ret1:-2 ret2:-2 ret3:-2
+[2015-Sep-01 00:10:38.922385]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:10:38.924853]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:10:39.114041]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:10:39.508449]: user :: 1 :: 20150901 :: 08:10:39 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:10:42.517835]: ret0:0 ret1:-2 ret2:-2 ret3:-2
+[2015-Sep-01 00:24:51.297532]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:24:51.303218]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:24:51.487332]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:24:51.856711]: user :: 1 :: 20150901 :: 08:24:51 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:24:51.858291]: requestQryInstrument CFFEX return0
+[2015-Sep-01 00:24:52.757689]: requestQryInstrument SHFEX return0
+[2015-Sep-01 00:26:02.830036]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:26:02.835130]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:26:03.026771]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:26:03.387836]: user :: 1 :: 20150901 :: 08:26:03 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:26:03.389013]: requestQryInstrument CFFEX return0
+[2015-Sep-01 00:26:03.766862]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:26:28.579082]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:26:28.581829]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:26:28.832055]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:26:29.259019]: user :: 1 :: 20150901 :: 08:26:29 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:26:29.259597]: requestQryInstrument CFFEX return0
+[2015-Sep-01 00:26:29.672296]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:28:05.389076]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:28:05.392471]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:28:05.584014]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:28:05.955994]: user :: 1 :: 20150901 :: 08:28:05 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:28:05.957692]: requestQryInstrument CFFEX return0
+[2015-Sep-01 00:28:06.331754]: requestQryInstrument SHFE return0
+[2015-Sep-01 00:28:06.903167]: requestQryInstrument DCE return-3
+[2015-Sep-01 00:28:39.200349]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:28:39.202943]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:28:39.392754]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:28:39.774108]: user :: 1 :: 20150901 :: 08:28:39 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:28:39.774622]: requestQryInstrument CFFEX return0
+[2015-Sep-01 00:28:40.148084]: requestQryInstrument SHFE return0
+[2015-Sep-01 00:28:40.710266]: requestQryInstrument DCEX return-3
+[2015-Sep-01 00:38:33.350908]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:38:33.353570]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:38:33.553604]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:38:33.920229]: user :: 1 :: 20150901 :: 08:38:33 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:38:33.920994]: requestQryInstrument CFFEX return0
+[2015-Sep-01 00:38:34.286217]: requestQryInstrument SHFEX return0
+[2015-Sep-01 00:38:54.794481]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:38:54.797435]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:38:55.007218]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:38:55.412681]: user :: 1 :: 20150901 :: 08:38:55 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:38:55.414158]: requestQryInstrument CFFEX return0
+[2015-Sep-01 00:38:55.839210]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.839688]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.839975]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.840341]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.840864]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.841192]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.841469]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.841824]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.842262]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.842493]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.842847]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.843239]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.843658]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.843952]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.844315]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.844531]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.844864]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.845229]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.845547]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.845956]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.846248]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.846409]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.846563]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.846701]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.847130]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.847347]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.847614]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.847871]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.848292]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.848568]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.848987]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.849359]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.849671]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.850054]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.850353]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.850743]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.851098]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.851564]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.851870]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.852061]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.852241]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.852585]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.852998]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.853247]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.853420]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.853780]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.854074]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.854292]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.854757]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.855047]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.855357]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.855564]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.855754]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.856064]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.856351]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.856556]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.856836]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.857395]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.857711]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.858005]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.858293]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.858623]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.858881]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.859012]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.859109]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.859285]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.859583]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.859885]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.860187]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.860388]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.860754]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.861038]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.861240]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.861492]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.861806]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.862095]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.862259]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.862529]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.862776]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.863014]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.863223]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.863484]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.863685]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.864082]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.864303]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.864480]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.864787]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.865000]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.865231]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.865387]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.865624]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.865917]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.866394]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.866629]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.866866]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.867142]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.867378]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.867757]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.867958]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.868251]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.868568]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.868825]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.869102]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.869361]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.869646]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.870076]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.870268]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.870696]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.870973]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.871171]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.871342]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.871581]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.871823]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.872158]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.872345]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.872687]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.872943]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.873269]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.873657]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.874183]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.874550]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.874854]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.875321]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.875736]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.876269]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.876751]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.877283]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.877608]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.878021]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.878519]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.878993]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.879382]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.879851]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.880273]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.880786]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.881081]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.881646]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.882125]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.882790]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.883315]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.883508]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.883765]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.884006]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.884277]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.884685]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.884937]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.885104]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.885416]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.885717]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.885948]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.886227]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.886658]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.886906]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.887056]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.887215]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.887342]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.887672]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.888141]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.888517]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.888820]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.889046]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.889286]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.889496]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.889863]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.890377]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.890940]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.891560]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.892326]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.893193]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.894592]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.895064]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.895849]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.896890]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.897189]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.897349]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.897722]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.897980]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.898485]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.898973]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.899492]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.899680]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.899867]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.900060]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.900340]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.900679]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.900964]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.901225]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.901531]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.901890]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.902318]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.902552]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.902807]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.903028]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.903431]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.903704]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.903881]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.904308]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.904614]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.904805]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.904996]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.905205]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.905400]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.905759]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.906007]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.906248]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.906552]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.906938]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.907199]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.907388]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.907740]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.908111]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.908416]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.908783]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.909127]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.909469]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.909670]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.909997]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.910455]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.910604]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.910753]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.910935]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.911312]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.911514]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.911772]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.912022]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.912348]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.912692]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.912942]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.913276]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.913653]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.913920]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.914094]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.914269]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.914559]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.914845]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.915176]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.915412]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.916021]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.916487]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.917026]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.917613]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.918089]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.918664]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.919258]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.919729]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.920848]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.921169]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.922510]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.922892]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.923371]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.924878]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.925271]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.925673]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.926062]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.926340]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.926628]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.927313]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.927864]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.928517]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.929485]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.930415]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.931185]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.932014]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.933348]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.934477]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.934766]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.935281]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.936042]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.936535]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.936887]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.937421]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.937770]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.938286]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.938710]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.939073]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.939468]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.939753]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.940128]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.940653]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.940924]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.941168]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.941422]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.941923]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.942263]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.942536]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.942808]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.943154]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.943523]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.944161]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.944444]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.944653]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.944999]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.945490]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.945937]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.946322]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.946555]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.946728]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.947041]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.947443]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.947694]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.948016]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.948315]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.948758]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.949028]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.949202]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.949388]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.949634]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.949833]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.949980]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.950316]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.950606]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.950989]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.951228]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.951494]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.951719]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.952241]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.953308]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.953660]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.954054]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.955022]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.955372]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.955703]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.956177]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.956419]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.956914]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.957147]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.957147]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.959558]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.960271]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.961242]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.961639]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.961797]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.962001]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.962186]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.962324]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.962879]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.964010]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.965391]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.965863]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.966127]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.967176]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.967393]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.967559]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.967776]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.968035]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.968346]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.969024]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.969459]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.969715]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.969954]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.970488]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.970837]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.971195]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.971481]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.971733]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.972194]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.972442]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.972591]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.972872]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.973121]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.973393]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.973550]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.973760]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.974302]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.974708]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.975525]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.975992]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.976366]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.976615]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.976836]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.977269]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.977782]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.978582]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.981948]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.983325]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.984437]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.984914]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.985382]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.985599]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.985826]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.986252]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.986496]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.986725]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.986725]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.986947]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.987705]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.987935]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.988118]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.988355]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.989087]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.989298]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.989515]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.989727]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.990037]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.990494]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.990705]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.990919]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.991223]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.991561]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.991825]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.992046]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.992310]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.992482]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.992693]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.992915]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.993202]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.993396]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.993586]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.994354]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.994676]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.995660]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.995884]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.996077]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.996295]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.996483]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.996784]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.996983]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.997252]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.997252]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.997741]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.997945]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.998181]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.998729]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.999164]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.999399]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:55.999804]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:56.000538]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:56.001028]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:56.001251]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:56.001453]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:56.001701]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:56.002001]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:38:56.002270]: requestQryInstrument SHFEX return0
+[2015-Sep-01 00:42:26.855552]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:42:26.859195]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:42:27.058514]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:42:27.446574]: user :: 1 :: 20150901 :: 08:42:27 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:42:27.448240]: requestQryInstrument CFFEX return0
+[2015-Sep-01 00:42:27.833141]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.833781]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.834525]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.835057]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.835766]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.836507]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.837086]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.837787]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.838299]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.838951]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.839636]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.840186]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.840761]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.841421]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.841931]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.842419]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.842977]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.843579]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.844115]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.844653]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.845266]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.845822]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.846445]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.847158]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.848026]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.848587]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.849115]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.849715]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.850407]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.850857]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.851549]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.852041]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.852649]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.853494]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.854814]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.856284]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.857462]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.859288]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.860452]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.861614]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.862351]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.863014]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.864180]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.864837]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.865671]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.866429]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.867530]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.868316]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.869164]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.869955]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.870618]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.871565]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.872092]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.872834]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.873636]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.874752]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.875981]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.876856]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.878300]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.879843]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.880834]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.881466]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.882223]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.882757]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.883389]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.883894]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.884425]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.885022]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.885571]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.886210]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.886950]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.887388]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.888039]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.888603]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.889205]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.889832]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.890456]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.891104]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.891608]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.892069]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.892584]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.893007]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.893426]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.894014]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.894528]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.895123]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.895811]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.896247]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.896835]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.897438]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.898100]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.898607]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.899312]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.899771]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.900314]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.900904]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.901413]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.902009]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.902629]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.903219]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.903686]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.904139]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.904680]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.905520]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.906432]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.906983]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.907591]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.908172]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.908647]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.909099]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.909726]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.910265]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.910987]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.911566]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.912132]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.912510]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.912922]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.913165]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.913372]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.913777]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.914331]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.914752]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.915172]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.915761]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.916412]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.917128]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.917828]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.919322]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.920612]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.922248]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.923570]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.924416]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.924957]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.925574]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.925963]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.926526]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.927011]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.927745]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.928293]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.928798]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.929344]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.929992]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.931000]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.931537]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.932012]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.932619]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.933150]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.933731]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.934398]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.934844]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.935517]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.936017]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.936732]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.937251]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.937772]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.938379]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.939151]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.939593]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.940907]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.941731]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.942902]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.944247]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.945329]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.946866]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.947534]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.948364]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.948895]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.950441]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.951002]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.951564]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.952028]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.952666]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.953232]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.953864]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.954401]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.955037]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.955635]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.956312]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.957017]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.957738]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.958863]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.960173]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.960999]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.961987]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.963567]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.964740]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.965363]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.965939]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.966513]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.966982]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.967508]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.968148]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.968632]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.969336]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.969994]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.970485]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.971175]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.971722]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.972190]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.972760]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.973407]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.974285]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.975307]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.975845]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.976460]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.977290]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.977808]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.978461]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.979006]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.979662]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.980170]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.980847]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.981481]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.982165]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.982690]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.983198]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.983844]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.984446]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.985107]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.985613]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.986256]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.986978]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.987651]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.988325]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.988886]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.989838]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.990501]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.991040]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.991538]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.992323]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.993126]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.993423]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.994056]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.994245]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.994938]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.995412]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.996794]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.997755]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.998523]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:27.999544]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:28.001323]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:28.001560]: requestQryInstrument SHFEX return-3
+[2015-Sep-01 00:42:28.002223]: requestQryInstrument SHFEX return0
+[2015-Sep-01 00:44:06.837234]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:44:06.839580]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:44:07.043239]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:44:07.444793]: user :: 1 :: 20150901 :: 08:44:07 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:44:08.446020]: requestQryInstrument CFFEX return0
+[2015-Sep-01 00:44:09.867584]: requestQryInstrument SHFEX return0
+[2015-Sep-01 00:46:35.837321]: MyTraderSpi[TraderFrontAddr: tcp://180.168.212.51:41205, MdFrontAddr: tcp://180.168.212.51:41213, BrokerId: 88888, UserId: 8611204710, Password: 171419, MdBrokerId: 88888, MdUserId: 8611204710, MdPassword: 171419, Contract: IF1509, tradeHandlerAddr: inproc://localhost:9995, tradeHandlerListen: inproc://localhost:9996, feedHandlerAddr: inproc://localhost:9997, simDate: , size: 1]
+[2015-Sep-01 00:46:35.842279]: Query: CREATE TABLE if not exists `futures`.`20150901k` (		    `symbol` VARCHAR(10) NOT NULL,					     `period` int NOT NULL,						      `time` VARCHAR(12) NOT NULL,							       `open` DOUBLE NULL,										     `high` DOUBLE NULL,									     `low` DOUBLE NULL,									      `close` DOUBLE NULL,								     `volume` INT NULL,								      INDEX `idx1` (`symbol` ASC),								     INDEX `idx2` (period ASC),									     INDEX `idx3` (time ASC))
+[2015-Sep-01 00:46:36.030801]: --->>>OnFrontConnectedsuccess
+
+[2015-Sep-01 00:46:36.391249]: user :: 1 :: 20150901 :: 08:46:36 :: 88888 :: 8611204710 :: TradingHosting
+
+[2015-Sep-01 00:46:37.395889]: requestQryInstrument CFFEX return0
+[2015-Sep-01 00:46:38.774622]: requestQryInstrument SHFE return0
+[2015-Sep-01 00:46:40.546876]: requestQryInstrument DCE return0
+[2015-Sep-01 00:46:42.474650]: requestQryInstrument CZCE return0

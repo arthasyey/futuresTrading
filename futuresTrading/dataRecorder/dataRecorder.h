@@ -36,8 +36,11 @@ public:
 class MyTraderSpi : public CThostFtdcTraderSpi {
   CThostFtdcTraderApi *pTraderApi;
   FuturesConfigInfo config;
+  int requestId = 0;
+  string lastExchangeStr;
 public:
   MyTraderSpi(const FuturesConfigInfo& config);
+  void requestQryInstrument(const string& exchange);
   virtual void OnFrontConnected();
   virtual void OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
   virtual void OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);

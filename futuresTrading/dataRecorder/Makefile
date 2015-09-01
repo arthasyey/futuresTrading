@@ -11,7 +11,7 @@ INCLUDES += -I../include -Wl,-rpath=.
 all: $(SOURCES) $(EXECUTABLE)
     
 $(EXECUTABLE): $(OBJECTS) 
-	$(CC) -DBOOST_ALL_DYN_LINK $(LDFLAGS) $(OBJECTS) $(LIBS) ../ctp/thostmduserapi.so ../ctp/thosttraderapi.so -o $@
+	$(CC) -DBOOST_ALL_DYN_LINK $(LDFLAGS) $(OBJECTS) $(LIBS) -lthostmduserapi -lthosttraderapi -o $@
 
 .cpp.o:
 	$(CC) -DBOOST_ALL_DYN_LINK $(CFLAGS) $(INCLUDES) $< -o $@
