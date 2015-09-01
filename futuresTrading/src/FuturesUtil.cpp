@@ -446,20 +446,16 @@ string FuturesUtil::orderActionStatusToString(TThostFtdcOrderActionStatusType st
   switch (status)
   {
   case THOST_FTDC_OAS_Submitted:
-    return "�Ѿ��ύ";
+    return "Submitted";
   case THOST_FTDC_OAS_Accepted:
-    return  "�Ѿ�����";
+    return  "Accepted";
   case THOST_FTDC_OAS_Rejected:
-    return  "�Ѿ����ܾ�";
+    return  "Rejected";
 
   default:
     return "NA";
   }
-
-  typedef char TThostFtdcOrderActionStatusType;
 }
-
-
 
 FuturesConfigInfo FuturesUtil::LoadConfigureFile(const string &filename) {
   FuturesConfigInfo configInfo;
@@ -468,14 +464,13 @@ FuturesConfigInfo FuturesUtil::LoadConfigureFile(const string &filename) {
   in.open(filename.c_str(), ios::in);
   if (in.is_open()) {
     string tmpStr;
-    cout << "open";
     while (getline(in, tmpStr))
     {
       int pos = tmpStr.find('=');
       string strName = tmpStr.substr(0, pos);
       string strValue = tmpStr.substr(pos + 1, tmpStr.length());
       ConfigInfo[strName] = strValue;
-      cout << "line" << tmpStr<< endl;
+      cout << "config: " << tmpStr<< endl;
     }
     configInfo.TraderFrontAddr = boost::trim_copy(ConfigInfo["TraderFrontAddr"]);
     configInfo.MdFrontAddr = boost::trim_copy(ConfigInfo["MdFrontAddr"]);
@@ -486,17 +481,6 @@ FuturesConfigInfo FuturesUtil::LoadConfigureFile(const string &filename) {
     configInfo.MdUserId = boost::trim_copy(ConfigInfo["MdUserId"]);
     configInfo.MdPassword = boost::trim_copy(ConfigInfo["MdPassword"]);
     configInfo.Contract = boost::trim_copy(ConfigInfo["Contract"]);
-
-//    configInfo.TraderFrontAddr = ConfigInfo["TraderFrontAddr"];
-//    configInfo.MdFrontAddr = ConfigInfo["MdFrontAddr"];
-//    configInfo.BrokerId = ConfigInfo["BrokerId"];
-//    cout << configInfo.BrokerId << "length:" << configInfo.BrokerId.length();
-//    configInfo.UserId = ConfigInfo["UserId"];
-//    configInfo.Password = ConfigInfo["Password"];
-//    configInfo.MdBrokerId = ConfigInfo["MdBrokerId"];
-//    configInfo.MdUserId = ConfigInfo["MdUserId"];
-//    configInfo.MdPassword = ConfigInfo["MdPassword"];
-//    configInfo.Contract = ConfigInfo["Contract"];
     if (ConfigInfo.find("Size") != ConfigInfo.end()) {
       stringstream ss;
       ss << ConfigInfo["Size"];
@@ -512,7 +496,6 @@ FuturesConfigInfo FuturesUtil::LoadConfigureFile(const string &filename) {
     }
   }
   in.close();
-  cout << configInfo.BrokerId << "1length:" << configInfo.BrokerId.length();
   return configInfo;
 }
 

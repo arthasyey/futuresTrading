@@ -8,7 +8,7 @@
 #include "FuturesDataStructures.h"
 
 
-class FuturesMdSpi : public CThostFtdcMdSpi {
+class FeedHandler : public CThostFtdcMdSpi {
 protected:	
 	std::mutex mtx2;
 	std::unique_lock<mutex> lock2;
@@ -16,7 +16,7 @@ protected:
 
 	FuturesConfigInfo configInfo;
 
-	FuturesMdSpi(const FuturesConfigInfo& _configInfo);
+	FeedHandler(const FuturesConfigInfo& _configInfo);
 
 
 public:
@@ -26,29 +26,29 @@ public:
 
 	virtual void OnFrontDisconnected(int nReason){};
 
-	///ÐÄÌø³¬Ê±¾¯¸æ¡£µ±³¤Ê±¼äÎ´ÊÕµ½±¨ÎÄÊ±£¬¸Ã·½·¨±»µ÷ÓÃ¡£
-	///@param nTimeLapse ¾àÀëÉÏ´Î½ÓÊÕ±¨ÎÄµÄÊ±¼ä
+	///ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½æ¡£ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Î´ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¡ï¿½
+	///@param nTimeLapse ï¿½ï¿½ï¿½ï¿½ï¿½Ï´Î½ï¿½ï¿½Õ±ï¿½ï¿½Äµï¿½Ê±ï¿½ï¿½
 	virtual void OnHeartBeatWarning(int nTimeLapse){};
 
 
-	///µÇÂ¼ÇëÇóÏìÓ¦
+	///ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦
 	virtual void OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);// {}
 
-	///µÇ³öÇëÇóÏìÓ¦
+	///ï¿½Ç³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦
 	virtual void OnRspUserLogout(CThostFtdcUserLogoutField *pUserLogout, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {}
 
-	///´íÎóÓ¦´ð
+	///ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½
 	virtual void OnRspError(CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {}
 
-	///¶©ÔÄÐÐÇéÓ¦´ð
+	///ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½
 	virtual void OnRspSubMarketData(CThostFtdcSpecificInstrumentField *pSpecificInstrument, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {
 		//cerr << "--->>> " << "FuturesMdSpi::OnRspSubMarketData: " << pSpecificInstrument->InstrumentID << endl;
 	}
 
-	///È¡Ïû¶©ÔÄÐÐÇéÓ¦´ð
+	///È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½
 	virtual void OnRspUnSubMarketData(CThostFtdcSpecificInstrumentField *pSpecificInstrument, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {}
 
-	///Éî¶ÈÐÐÇéÍ¨Öª
+	///ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨Öª
 	virtual void OnRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDepthMarketData) {}
 
 	int SubscribeMarketData(const vector<string>& instruments, int nCount);

@@ -25,7 +25,8 @@ extern MySqlConnector mysqlConnector;
     `volume` INT NULL,								  \
     INDEX `idx1` (`symbol` ASC),								 \
     INDEX `idx2` (period ASC),									 \
-    INDEX `idx3` (time ASC))"
+    INDEX `idx3` (time ASC)),	\
+    PRIMARY KEY (symbol, period, time)"
 
 class MyKlineGenerator : public KLineGenerator {
 public:

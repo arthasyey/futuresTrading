@@ -1,17 +1,20 @@
 #ifndef _FUTURES_UTIL_
 #define _FUTURES_UTIL_
 
-#include <string>
 #include "FuturesDataStructures.h"
+#include "logging.h"
 #include "../ctp/ThostFtdcUserApiStruct.h"
+
+#include <string>
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/algorithm/string.hpp>
 #include <boost/format.hpp>
 
 using namespace std;
 
-#define FuturesDbName "Futures";
+#define FuturesDbName "futures";
 
+extern src::severity_logger< severity_level > lg;
 
 bool floatNumberLess(double first, double second);
 bool floatNumberEqual(double first, double second);

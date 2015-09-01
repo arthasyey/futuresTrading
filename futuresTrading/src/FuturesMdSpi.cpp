@@ -1,15 +1,15 @@
 #include "../include/FuturesMdSpi.h"
 
 
-FuturesMdSpi::FuturesMdSpi(const FuturesConfigInfo& _configInfo) : configInfo(_configInfo), lock2(mtx2, defer_lock) {
+FeedHandler::FeedHandler(const FuturesConfigInfo& _configInfo) : configInfo(_configInfo), lock2(mtx2, defer_lock) {
 	pMdApi = CThostFtdcMdApi::CreateFtdcMdApi();
 	pMdApi->RegisterSpi(this);
 
-	pMdApi->RegisterFront(const_cast<char*>(FuturesMdSpi::configInfo.MdFrontAddr.c_str()));
+	pMdApi->RegisterFront(const_cast<char*>(FeedHandler::configInfo.MdFrontAddr.c_str()));
 	pMdApi->Init();
 }
 
-void FuturesMdSpi::OnFrontConnected() {
+void FeedHandler::OnFrontConnected() {
 	CThostFtdcReqUserLoginField req;
 	memset(&req, 0, sizeof(req));
 	strcpy(req.BrokerID, configInfo.MdBrokerId.c_str());
@@ -20,7 +20,7 @@ void FuturesMdSpi::OnFrontConnected() {
 }
 
 
-void FuturesMdSpi::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {
+void FeedHandler::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {
 	cerr << "--->>> " << __FUNCTION__ << endl;
 	if (bIsLast)
 	{
@@ -32,7 +32,7 @@ void FuturesMdSpi::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CT
 }
 
 
-int FuturesMdSpi::SubscribeMarketData(const vector<string>& instruments) {
+int FeedHandler::SubscribeMarketData(const vector<string>& instruments) {
 	int count = instruments.size();
 	char** pInstruments = new char*[count];
 	for (int i = 0; i < instrument.size(); ++i)
@@ -50,7 +50,7 @@ int FuturesMdSpi::SubscribeMarketData(const vector<string>& instruments) {
 }
 
 
-int FuturesMdSpi::SubscribeMarketData(const string& instrument) {
+int FeedHandler::SubscribeMarketData(const string& instrument) {
 	vector<string> instruments(1, instrument);
 	return SubscribeMarketData(instruments);
 }

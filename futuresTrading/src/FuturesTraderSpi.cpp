@@ -1,11 +1,13 @@
 #include "../include/FuturesTraderSpi.h"
 
+FuturesTraderSpi::FuturesTraderSpi(const FuturesConfigInfo& _configInfo) : configInfo(_configInfo), iRequestID(0) {}
 
-FuturesTraderSpi::FuturesTraderSpi(const FuturesConfigInfo& _configInfo) : lock1(mtx1, defer_lock), configInfo(_configInfo), iRequestID(0) {}
+void FuturesTraderSpi::OnFrontDisconnected() {
 
+}
 
 void FuturesTraderSpi::OnFrontConnected()
-{	
+{
   initLogger();
   CThostFtdcReqUserLoginField req;
   memset(&req, 0, sizeof(req));
@@ -28,13 +30,9 @@ void FuturesTraderSpi::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin
     ///获取当前交易日
     BOOST_LOG_SEV(lg, info) << "--->>> 获取当前交易日 = " << pTraderApi->GetTradingDay() << endl;
     ///投资者结算结果确认
-    //ReqSettlementInfoConfirm();	
+    //ReqSettlementInfoConfirm();
 
     BOOST_LOG_SEV(lg, info) << "Current FrontID: " << FRONT_ID << " current Session ID: " << SESSION_ID;
-
-    std::unique_lock<mutex> localLock(mtx1);
-    cv1.notify_all();
-    localLock.unlock();
   }
 }
 
