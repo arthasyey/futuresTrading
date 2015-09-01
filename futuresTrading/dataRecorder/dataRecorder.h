@@ -10,9 +10,9 @@
 
 extern src::severity_logger< severity_level > lg;
 
-#define INSERT_KLINE_QUERY "insert into futures.%1%k values ('%2%', %3%, '%4%', %5%, %6%, %7%, %8%, %9%)"
+#define INSERT_KLINE_QUERY "insert into futures.%1%K values ('%2%', %3%, '%4%', %5%, %6%, %7%, %8%, %9%)"
 
-#define CREATE_KLINE_TABLE_QUERY "CREATE TABLE if not exists `futures`.`%1%k` (		\
+#define CREATE_KLINE_TABLE_QUERY "CREATE TABLE if not exists `futures`.`%1%K` (		\
     `symbol` VARCHAR(10) NOT NULL,					 \
     `period` int NOT NULL,						  \
     `time` VARCHAR(12) NOT NULL,							   \
