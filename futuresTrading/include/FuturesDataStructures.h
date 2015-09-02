@@ -43,7 +43,7 @@ struct FuturesConfigInfo {
   string MdFrontAddr;
   string BrokerId, UserId, Password;
   string MdBrokerId, MdUserId, MdPassword;
-  string Contract;
+  string Symbol;
   string tradeHandlerAddr;
   string traderHandlerListen;
   string feedHandlerAdddr;
@@ -59,11 +59,11 @@ struct FuturesConfigInfo {
 
   FuturesConfigInfo() :TraderFrontAddr("tcp://asp-sim2-front1.financial-trading-platform.com:26205"),
     MdFrontAddr("tcp://asp-sim2-md1.financial-trading-platform.com:26213"), BrokerId("2030"), UserId("80489"), Password("888888"),
-    MdBrokerId("2030"), MdUserId("80489"), MdPassword("888888"), Contract("IF1412"), tradeHandlerAddr("inproc://localhost:9995"),
+    MdBrokerId("2030"), MdUserId("80489"), MdPassword("888888"), Symbol("IF1412"), tradeHandlerAddr("inproc://localhost:9995"),
     traderHandlerListen("inproc://localhost:9996"), feedHandlerAdddr("inproc://localhost:9997"), size(1) {
   }
 
-  FuturesConfigInfo(const string& _symbol, const string& _simDate) : Contract(_symbol), simDate(_simDate), size(1) {}
+  FuturesConfigInfo(const string& _symbol, const string& _simDate) : Symbol(_symbol), simDate(_simDate), size(1) {}
 
   string toString() {
    stringstream ss;
@@ -75,7 +75,7 @@ struct FuturesConfigInfo {
     << ", MdBrokerId: " << MdBrokerId
     << ", MdUserId: " << MdUserId
     << ", MdPassword: " << MdPassword
-    << ", Contract: " << Contract
+    << ", Contract: " << Symbol
     << ", tradeHandlerAddr: " << tradeHandlerAddr
     << ", tradeHandlerListen: " << traderHandlerListen
     << ", feedHandlerAddr: " << feedHandlerAdddr

@@ -14,7 +14,7 @@ protected:
 	std::unique_lock<mutex> lock2;
 	std::condition_variable cv2;
 
-	FuturesConfigInfo configInfo;
+	FuturesConfigInfo config;
 
 	FeedHandler(const FuturesConfigInfo& _configInfo);
 

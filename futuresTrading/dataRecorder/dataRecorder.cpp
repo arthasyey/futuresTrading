@@ -12,7 +12,7 @@ MyTraderSpi::MyTraderSpi(const FuturesConfigInfo& _config) : config(_config) {
   pTraderApi->SubscribePrivateTopic(THOST_TERT_QUICK);
   pTraderApi->RegisterSpi(this);
   pTraderApi->RegisterFront(const_cast<char*>(config.TraderFrontAddr.c_str()));
-  BOOST_LOG_SEV(lg, info) << __PRETTY_FUNCTION__ << config.toString();
+  LOG_BOOST << config.toString();
   pTraderApi->Init();
 }
 
@@ -37,7 +37,7 @@ void MyTraderSpi::requestQryInstrument(const string& exchange) {
   while(UNDER_CTP_FLOW_CONTROL(ret)) {
   sleep(1);
     ret = pTraderApi->ReqQryInstrument(&reqInstrument, ++requestId);
-    BOOST_LOG_SEV(lg, info) << __PRETTY_FUNCTION__ << " " << exchange << " return" << ret;
+    LOG_BOOST << " " << exchange << " return" << ret;
   }
 }
 
@@ -90,7 +90,7 @@ DataRecorder::DataRecorder(const FuturesConfigInfo& config) : traderSpi(config),
 }
 
 void DataRecorder::OnFrontDisconnected(int nReason) {
-  BOOST_LOG_SEV(lg, info) << __PRETTY_FUNCTION__ << " reason code: " << nReason;
+  LOG_BOOST << " reason code: " << nReason;
   pMdApi->RegisterFront(const_cast<char*>(configInfo.MdFrontAddr.c_str()));
 }
 
@@ -107,7 +107,7 @@ void DataRecorder::OnFrontConnected() {
 void DataRecorder::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {
   sleep(20);
 
-  cerr << "subscribe to symbols: " << concatenate(traderSpi.instruments, ",") << endl;
+  LOG_BOOST << "subscribe to symbols: " << concatenate(traderSpi.instruments, ",") << endl;
   int count = traderSpi.instruments.size();
   char** pInstruments = new char*[count];
   for (int i = 0; i < count; ++i)

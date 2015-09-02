@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS:=-std=gnu++11 -g -o3 -c -Wall 
+CFLAGS:=-std=gnu++11 -g -o3 -c -Wall -fPIC
 LDFLAGS=
 SOURCES=main.cpp dataRecorder.cpp ../src/FuturesUtil.cpp ../src/logging.cpp ../src/mysqlConnector.cpp ../src/kLineGenerator.cpp
 OBJECTS=$(SOURCES:.cpp=.o)

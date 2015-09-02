@@ -45,5 +45,6 @@ public:
 
 };
 
+extern MySqlConnector mysqlConnector;
 
 #endif

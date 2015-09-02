@@ -480,7 +480,7 @@ FuturesConfigInfo FuturesUtil::LoadConfigureFile(const string &filename) {
     configInfo.MdBrokerId = boost::trim_copy(ConfigInfo["MdBrokerId"]);
     configInfo.MdUserId = boost::trim_copy(ConfigInfo["MdUserId"]);
     configInfo.MdPassword = boost::trim_copy(ConfigInfo["MdPassword"]);
-    configInfo.Contract = boost::trim_copy(ConfigInfo["Contract"]);
+    configInfo.Symbol = boost::trim_copy(ConfigInfo["Contract"]);
     if (ConfigInfo.find("Size") != ConfigInfo.end()) {
       stringstream ss;
       ss << ConfigInfo["Size"];

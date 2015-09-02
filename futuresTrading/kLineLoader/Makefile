@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS:=-std=gnu++11 -g -o3 -c -Wall 
+CFLAGS:=-std=gnu++11 -g -o3 -c -Wall -fPIC
 LDFLAGS=
 SOURCES=main.cpp ../src/mysqlConnector.cpp ../src/logging.cpp ../src/FuturesUtil.cpp
 OBJECTS=$(SOURCES:.cpp=.o)

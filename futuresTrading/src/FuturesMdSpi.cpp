@@ -1,20 +1,20 @@
 #include "../include/FuturesMdSpi.h"
 
 
-FeedHandler::FeedHandler(const FuturesConfigInfo& _configInfo) : configInfo(_configInfo), lock2(mtx2, defer_lock) {
+FeedHandler::FeedHandler(const FuturesConfigInfo& _configInfo) : config(_configInfo), lock2(mtx2, defer_lock) {
 	pMdApi = CThostFtdcMdApi::CreateFtdcMdApi();
 	pMdApi->RegisterSpi(this);
 
-	pMdApi->RegisterFront(const_cast<char*>(FeedHandler::configInfo.MdFrontAddr.c_str()));
+	pMdApi->RegisterFront(const_cast<char*>(FeedHandler::config.MdFrontAddr.c_str()));
 	pMdApi->Init();
 }
 
 void FeedHandler::OnFrontConnected() {
 	CThostFtdcReqUserLoginField req;
 	memset(&req, 0, sizeof(req));
-	strcpy(req.BrokerID, configInfo.MdBrokerId.c_str());
-	strcpy(req.UserID, configInfo.MdUserId.c_str());
-	strcpy(req.Password, configInfo.MdPassword.c_str());
+	strcpy(req.BrokerID, config.MdBrokerId.c_str());
+	strcpy(req.UserID, config.MdUserId.c_str());
+	strcpy(req.Password, config.MdPassword.c_str());
 	pMdApi->ReqUserLogin(&req, 0);
 	cerr << "--->>> Connect to Md Frontend: " << ((iResult == 0) ? "Succeed" : "Failure") << endl;
 }
@@ -27,7 +27,7 @@ void FeedHandler::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CTh
 		std::unique_lock<mutex> localLock(mtx2);
 		cv2.notify_all();
 		localLock.unlock();
-		SubscribeMarketData(configInfo.Contract);
+		SubscribeMarketData(config.Symbol);
 	}	
 }
 

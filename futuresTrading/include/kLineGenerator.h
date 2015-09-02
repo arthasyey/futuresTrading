@@ -4,8 +4,8 @@
 #pragma once
 #include <FuturesUtil.h>
 #include <boost/algorithm/string.hpp>
-#include "../include/mysqlConnector.h"
-#include "../include/logging.h"
+#include <mysqlConnector.h>
+#include <logging.h>
 using namespace std;
 using namespace sql;
 

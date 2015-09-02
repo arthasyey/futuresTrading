@@ -16,6 +16,8 @@ using namespace std;
 
 extern src::severity_logger< severity_level > lg;
 
+#define LOG_BOOST BOOST_LOG_SEV(lg, info) << "--->>> " << __PRETTY_FUNCTION__
+
 bool floatNumberLess(double first, double second);
 bool floatNumberEqual(double first, double second);
 bool floatNumberLessEqual(double first, double second);
