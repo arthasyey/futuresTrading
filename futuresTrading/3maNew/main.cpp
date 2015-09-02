@@ -1,4 +1,4 @@
-#include "3MANew.h"
+#include "3maNew.h"
 
 int main(int argc, char* argv[]) {
   initLogger("130//130_%Y%m%d_%N.log");

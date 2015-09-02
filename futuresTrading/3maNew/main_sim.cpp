@@ -1,4 +1,4 @@
-#include "3MANew.h"
+#include "3maNew.h"
 
 
 int main(int argc, char* argv[]){
