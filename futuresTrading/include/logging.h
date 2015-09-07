@@ -1,3 +1,6 @@
+#ifndef _LOGGING_H_
+#define _LOGGING__H
+
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
 #include <boost/log/expressions.hpp>
@@ -11,8 +14,6 @@
 #include <boost/log/utility/setup/console.hpp>
 #include <boost/move/utility.hpp>
 #include <string>
-
-
 
 namespace logging = boost::log;
 namespace src = boost::log::sources;
@@ -28,3 +29,7 @@ void initLogger(const std::string& name);
 void flatLogging(const std::string& str);
 
 void flatLogging(int nItems, ...);
+
+extern src::severity_logger< severity_level > lg;
+
+#endif

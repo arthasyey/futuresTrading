@@ -2,7 +2,7 @@
 #define _3MA_H_
 
 #include <kLineGenerator.h>
-#include "../futuresTradeClient/futuresTradeClient.h"
+#include <futuresTradeClient.h>
 
 
 template<LaunchMode mode>
@@ -63,6 +63,8 @@ public:
 
   virtual void OnNotOneMinuteKLineInserted(int periodIndex);
 
+  virtual void OnOneMinuteKLineInserted();
+
   void calculateParameters();
 
   void returnToNoPositionState();
@@ -112,6 +114,8 @@ public:
   int nContractsTraded;
   double accumulatedPnlBeforeCommission;
   double accumulatedPnlAfterCommission;
+
+  ~ThreeMAClass() {}
 };
 
 
@@ -220,16 +224,16 @@ void ThreeMAClass<mode>::OnNotOneMinuteKLineInserted(int periodIndex) {
                if (lastKLine.close > MA1 && MA1 > MA2 && lastKLine.high > Hi && lastKLine.close < (Hi + adjust)) {
                  anchorKLineHigh = lastKLine.high;
                  state = LongWatching;
-                 BOOST_LOG_SEV(lg, info) << "3MA " << "State change to Long watching, At Time--->" << latestTick.UpdateTime << endl;
+                 BOOST_LOG_SEV(lg, info) << "3MA " << "State change to Long watching, At Time--->" << curTick.UpdateTime << endl;
                }
                else if (lastKLine.close < MA1 && MA1 < MA2 && lastKLine.low < Lo && lastKLine.close >(Lo - adjust)) {
                  anchorKLineLow = lastKLine.low;
                  state = ShortWatching;
-                 BOOST_LOG_SEV(lg, info) << "3MA " << "State change to Short watching, At Time--->" << latestTick.UpdateTime << endl;
+                 BOOST_LOG_SEV(lg, info) << "3MA " << "State change to Short watching, At Time--->" << curTick.UpdateTime << endl;
                }
                else {
                  state = NoPosition;
-                 BOOST_LOG_SEV(lg, info) << "3MA " << "Cur state: NoPosition , At Time--->" << latestTick.UpdateTime << endl;
+                 BOOST_LOG_SEV(lg, info) << "3MA " << "Cur state: NoPosition , At Time--->" << curTick.UpdateTime << endl;
                }
                break;
   }
@@ -247,7 +251,7 @@ void ThreeMAClass<mode>::OnNotOneMinuteKLineInserted(int periodIndex) {
                   tenKLineL = 1000000;
                   for (int i = 0; i < 10; ++i)
                     tenKLineL = min(tenKLineL, fiveMinuteKLines[fiveMinuteKLines.size() - 1 - i].low);
-                  BOOST_LOG_SEV(lg, info) << "3MA " << "Long state, update newH, countH, tenKLineL, At Time--->" << latestTick.UpdateTime << endl;
+                  BOOST_LOG_SEV(lg, info) << "3MA " << "Long state, update newH, countH, tenKLineL, At Time--->" << curTick.UpdateTime << endl;
                   break;
   }
   case Short:
@@ -265,13 +269,13 @@ void ThreeMAClass<mode>::OnNotOneMinuteKLineInserted(int periodIndex) {
                    for (int i = 0; i < 10; ++i)
                      tenKLineH = max(tenKLineH, fiveMinuteKLines[fiveMinuteKLines.size() - 1 - i].high);
 
-                   BOOST_LOG_SEV(lg, info) << "3MA " << "Short state, update newL, countL, tenKLineH, At Time--->" << latestTick.UpdateTime << endl;
+                   BOOST_LOG_SEV(lg, info) << "3MA " << "Short state, update newL, countL, tenKLineH, At Time--->" << curTick.UpdateTime << endl;
                    break;
   }
   default:
     break;
   }
-  dumpStatus(&latestTick);
+  dumpStatus(&curTick);
 }
 
 
@@ -528,5 +532,17 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
 
   KLineGenerator::feedTickData(p);
 }
+
+template<>
+void ThreeMAClass<SIM>::OnNotOneMinuteKLineInserted(int periodIdx) {
+
+}
+
+template<LaunchMode mode>
+void ThreeMAClass<mode>::OnOneMinuteKLineInserted() {
+  cout << "Tick: " << this->lastTick.UpdateTime << " kline time: " << lastOneMinuteKLineTime << " kline:" << lastOneMinuteKLine.toString() << endl;
+}
+
+
 
 #endif

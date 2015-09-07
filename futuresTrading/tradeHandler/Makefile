@@ -6,7 +6,7 @@ OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=tradeHandler.exe
 
 LIBS += -L../libs -lboost_system -lboost_filesystem -lboost_date_time -lboost_thread -lboost_log_setup -lboost_log -lpthread -ldl -lthosttraderapi -lzmq
-INCLUDES += -I../include -Wl,-rpath=.
+INCLUDES += -I../include -I../ctp -Wl,-rpath=.
 
 all: $(SOURCES) $(EXECUTABLE)
     

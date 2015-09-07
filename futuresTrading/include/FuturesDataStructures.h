@@ -1,23 +1,29 @@
 #ifndef _FUTUERS_DATA_STRUCTURES_
 #define _FUTUERS_DATA_STRUCTURES_
 
+#include <map>
 #include <string>
 #include <iostream>
 #include <vector>
 #include <boost/lexical_cast.hpp>
 #include <sstream>
-#include "../ctp/ThostFtdcUserApiStruct.h"
+#include <ThostFtdcUserApiStruct.h>
 
 using namespace std;
 
 #define DATA_ROOT		 string("/marketData/")
 
+#define CONFIG_ROOT      string("/futuresConfig/")
+
+struct FuturesContractInfo;
+extern map<string, FuturesContractInfo> contractInfos;
+
 #define UNDER_CTP_FLOW_CONTROL(ret) (ret == -2 || ret == -3)
 
 #define CFFEX "CFFEX"
-#define SHFEX "SHFE"
-#define DCEX  "DCE"
-#define CZCEX "CZCE"
+#define SHFE "SHFE"
+#define DCE  "DCE"
+#define CZCE "CZCE"
 
 enum Direction
 {
@@ -33,7 +39,7 @@ enum ORDER_DIRECTION {
   CLOSE_SHORT = 10
 };
 
-struct CInvestorPosition{
+struct CInvestorPosition {
   CThostFtdcInvestorPositionField LongPosition;
   CThostFtdcInvestorPositionField ShortPosition;
 };
@@ -59,8 +65,8 @@ struct FuturesConfigInfo {
 
   FuturesConfigInfo() :TraderFrontAddr("tcp://asp-sim2-front1.financial-trading-platform.com:26205"),
     MdFrontAddr("tcp://asp-sim2-md1.financial-trading-platform.com:26213"), BrokerId("2030"), UserId("80489"), Password("888888"),
-    MdBrokerId("2030"), MdUserId("80489"), MdPassword("888888"), Symbol("IF1412"), tradeHandlerAddr("inproc://localhost:9995"),
-    traderHandlerListen("inproc://localhost:9996"), feedHandlerAdddr("inproc://localhost:9997"), size(1) {
+    MdBrokerId("2030"), MdUserId("80489"), MdPassword("888888"), Symbol("IF1412"), tradeHandlerAddr("ipc:///tmp/futuresTradeRequests"),
+    traderHandlerListen("ipc:///tmp/futuresTradeResponses"), feedHandlerAdddr("ipc:///tmp/futuresFeeds"), size(1) {
   }
 
   FuturesConfigInfo(const string& _symbol, const string& _simDate) : Symbol(_symbol), simDate(_simDate), size(1) {}
@@ -85,7 +91,6 @@ struct FuturesConfigInfo {
   }
 };
 
-
 struct SecurityCtpConfigInfo {
   string TraderFrontAddr;
   string MdFrontAddr;
@@ -105,10 +110,7 @@ struct SecurityCtpConfigInfo {
     MdFrontAddr("tcp://14.17.75.31:6507"), BrokerId("2011"), UserId("020090005757"), Password("1233640"),
     MdBrokerId("2011"), MdUserId("020090005757"), MdPassword("1233640"), Contract("IF1412") {
   }
-
 };
-
-
 
 
 struct KLine{
@@ -123,6 +125,10 @@ struct KLine{
   int tickCount;
 
   KLine() :high(0), low(100000){}
+
+  KLine(const string& _symbol): high(0), low(10000), volume(0), tickCount(0) {
+    strcpy(symbol, _symbol.c_str());
+  }
 
   string toString() const {
     stringstream ss;
@@ -206,6 +212,8 @@ struct KLine{
   void feedTick(CThostFtdcDepthMarketDataField * p, int lastTickVolume) {
     close = p->LastPrice;
     volume += (p->Volume - lastTickVolume);
+    if(tickCount == 0)
+      open = p->LastPrice;
     ++tickCount;
     high = max(high, p->LastPrice);
     low = min(low, p->LastPrice);
@@ -234,6 +242,14 @@ enum MSG_TYPE {
   REP_ERR_RTN_ORDER_INSERT,
 
   MSG_FEED
+};
+
+
+struct FuturesContractInfo {
+	string exchange;
+	vector<std::pair<string, string>> tradingPeriods;
+
+	//FuturesContractInfo(const string& _exchange, const vector<pair<string, string>> & _tradingPeriods) : exchange(_exchange), tradingPeriods(_tradingPeriods) {}
 };
 
 #endif

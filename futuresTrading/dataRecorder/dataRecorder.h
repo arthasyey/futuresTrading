@@ -1,8 +1,8 @@
 #ifndef _DATA_RECORDER_
 #define _DATA_RECORDER_
 
-#include "../ctp/ThostFtdcMdApi.h"
-#include "../ctp/ThostFtdcTraderApi.h"
+#include <ThostFtdcMdApi.h>
+#include <ThostFtdcTraderApi.h>
 #include <kLineGenerator.h>
 #include <mysqlConnector.h>
 #include <fstream>

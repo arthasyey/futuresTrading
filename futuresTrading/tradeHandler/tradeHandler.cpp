@@ -10,8 +10,8 @@ TradeHandler::TradeHandler(const FuturesConfigInfo& _configInfo) : configInfo(_c
   pTraderApi->RegisterFront(const_cast<char*>(TradeHandler::configInfo.TraderFrontAddr.c_str()));					// connect
   pTraderApi->Init();
 
-  requestPuller.bind("inproc//*:9995");
-  responsePublisher.bind("inproc//*:9996");
+  requestPuller.bind("ipc:///tmp/futuresTradeRequests");
+  responsePublisher.bind("ipc:///tmp/futuresTradeResponses");
 }
 
 void TradeHandler::run() {

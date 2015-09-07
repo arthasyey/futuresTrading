@@ -1,26 +1,34 @@
-#include "../include/kLineGenerator.h"
-#include <FuturesDataStructures.h>
+#include <kLineGenerator.h>
 #include <FuturesUtil.h>
 
-extern src::severity_logger< severity_level > lg;
-extern MySqlConnector mysqlConnector;
-
-
-void KLineGenerator::feedTickData(CThostFtdcDepthMarketDataField * p) {
-  preTick = latestTick;
-  latestTick = *p;
-  generateOneMinuteKLine(p);
+KLineGenerator::KLineGenerator(const string& _date, const string& _symbol, const vector<int> &_kLineMinutePeriods)
+:date(boost::replace_all_copy(_date, "-", "")), symbol(_symbol), kLineMinutePeriods(_kLineMinutePeriods), notOneMinuteKLines(_kLineMinutePeriods.size(), vector<KLine>()),
+ notOneMinuteKLineWorkingSet(_kLineMinutePeriods.size(), vector<KLine>()) {
+  initOneMinuteKLines();
+  memset(&preTick, 0, sizeof(CThostFtdcDepthMarketDataField));
+  memset(&curTick, 0, sizeof(CThostFtdcDepthMarketDataField));
 }
 
+void KLineGenerator::initOneMinuteKLines() {
+  FuturesContractInfo contractInfo = contractInfos[FuturesUtil::getContractTypeFromSymbol(symbol)];
+  cout << "Periods!";
+  for(unsigned i = 0; i < contractInfo.tradingPeriods.size(); ++i) {
+      string &start = contractInfo.tradingPeriods[i].first;
+      string &end = contractInfo.tradingPeriods[i].second;
+      cout << "start: " << start << " end: " << end << endl;
+      vector<string> kLineTimesInBetween = getKLineTimesInBetween(start, end);
+      if(lastOneMinuteKLineTime == "")
+	lastOneMinuteKLineTime = kLineTimesInBetween[0];
 
-void KLineGenerator::feedOneMinuteKLine(const KLine& oneMinuteKLine) {
-  if (dataLoadingNeededBeforeFirstOneMinKLine)
-  {
-    dataLoadingNeededBeforeFirstOneMinKLine = false;
-    string query = (boost::format("select * from futures.%1%k where period=1 and symbol = '%2%' and time < '%3%'") % date % symbol % oneMinuteKLine.time).str();
-    ResultSet* res = mysqlConnector.query(query);
-    while (res && res->next())
-    {
+      for(unsigned i = 0; i < kLineTimesInBetween.size(); ++i) {
+	  timeToOneMinuteKLinesMap[kLineTimesInBetween[i]] = KLine(symbol);
+	  cout << "prebuild kline: " << kLineTimesInBetween[i] << endl;
+      }
+  }
+
+  string query = (boost::format("select * from futures.%1%k where period=1 and symbol = '%2%'") % date % symbol).str();
+  ResultSet* res = mysqlConnector.query(query);
+  while (res && res->next()) {
       KLine oneMissedOneMinuteKLine;
       strcpy(oneMissedOneMinuteKLine.symbol, symbol.c_str());
       strcpy(oneMissedOneMinuteKLine.date, date.c_str());
@@ -31,90 +39,99 @@ void KLineGenerator::feedOneMinuteKLine(const KLine& oneMinuteKLine) {
       oneMissedOneMinuteKLine.close = res->getDouble("close");
       oneMissedOneMinuteKLine.volume = res->getDouble("volume");
       feedOneMinuteKLine(oneMissedOneMinuteKLine);
-    }
   }
+}
 
-  oneMinuteKLines.push_back(oneMinuteKLine);
+vector<string> KLineGenerator::getKLineTimesInBetween(const string& start, const string& end, bool oneMinuteKLinesPrebuilt) {
+  vector<string> ret;
+  if(!oneMinuteKLinesPrebuilt) {
+      vector<string> startSegments = split(start, ':');
+      vector<string> endSegments = split(end, ':');
+      int startHour = atoi(startSegments[0].c_str());
+      int startMinute = atoi(startSegments[1].c_str());
+      int endHour = atoi(endSegments[0].c_str());
+      int endMinute = atoi(endSegments[1].c_str());
+      for(int h = startHour; h <= endHour; ++h) {
+	  int mHead = h == startHour ? startMinute + 1 : 0;
+	  int mEnd = h == endHour ? endMinute : 59;
+	  for(int m = mHead; m <= mEnd; ++m) {
+	      stringstream ss;
+	      if(h < 10)
+		ss << '0';
+	      ss << h << ':';
+	      if(m < 10)
+		ss << '0';
+	      ss << m << ":00";
+	      ret.push_back(ss.str());
+	  }
+      }
+  } else {
+      for(auto iter = timeToOneMinuteKLinesMap.upper_bound(start); iter != timeToOneMinuteKLinesMap.upper_bound(end); ++iter)
+	ret.push_back(iter->first);
+  }
+  return ret;
+}
 
-  BOOST_LOG_SEV(lg, info) << "Feed one minute KLine: " << oneMinuteKLine.toString() << endl;
-  for (unsigned i = 0; i < kLineMinutePeriods.size(); ++i)
-  {
-    unsigned period = kLineMinutePeriods[i];
-    int kLineMinute = oneMinuteKLine.getMinute();
-    notOneMinuteKLineWorkingSet[i].push_back(oneMinuteKLine);
-    if (notOneMinuteKLineWorkingSet[i].size() == period || kLineMinute % period == 0)
-    {
-      KLine oneLargeKLine(notOneMinuteKLineWorkingSet[i]);
-      notOneMinuteKLines[i].push_back(oneLargeKLine);
-      OnNotOneMinuteKLineInserted(i);
-      notOneMinuteKLineWorkingSet[i].clear();
-    }
+void KLineGenerator::feedTickData(CThostFtdcDepthMarketDataField * p) {
+  preTick = curTick;
+  curTick = *p;
+  generateOneMinuteKLine(p);
+}
+
+void KLineGenerator::feedOneMinuteKLine(const KLine& oneMinuteKLine) {
+  timeToOneMinuteKLinesMap[oneMinuteKLine.time] = oneMinuteKLine;
+  lastOneMinuteKLineTime = oneMinuteKLine.time;
+
+  // BOOST_LOG_SEV(lg, info) << "Feed one minute KLine: " << oneMinuteKLine.toString() << endl;
+  for (unsigned i = 0; i < kLineMinutePeriods.size(); ++i) {
+      unsigned period = kLineMinutePeriods[i];
+      int kLineMinute = oneMinuteKLine.getMinute();
+      notOneMinuteKLineWorkingSet[i].push_back(oneMinuteKLine);
+      if (kLineMinute % period == 0) {
+	  KLine oneLargeKLine(notOneMinuteKLineWorkingSet[i]);
+	  notOneMinuteKLines[i].push_back(oneLargeKLine);
+	  OnNotOneMinuteKLineInserted(i);
+	  notOneMinuteKLineWorkingSet[i].clear();
+      }
   }
   OnOneMinuteKLineInserted();
 }
 
-
+string KLineGenerator::getKLineTimeForTickTime(const string& tickTime) {
+  vector<string> segments = split(tickTime, ':');
+  int h = atoi(segments[0].c_str());
+  int m = atoi(segments[1].c_str());
+  int kLineM = m + 1;
+  int kLineH = h;
+  if (kLineM == 60) {
+      kLineM = 0;
+      kLineH = h + 1;
+  }
+  stringstream ss;
+  if(kLineH < 10)
+    ss << '0';
+  ss << kLineH << ':';
+  if(kLineM < 10)
+    ss << '0';
+  ss << kLineM << ":00";
+  return ss.str();
+}
 
 void KLineGenerator::generateOneMinuteKLine(CThostFtdcDepthMarketDataField *p) {
-  const vector<string> &timeComponents = FuturesUtil::split(p->UpdateTime, ':');
-  /* Aggregate Auction phase of IF */
-  string curMinute = timeComponents[1];
-  if (strcmp(p->UpdateTime, "09:14:00") < 0)
-    return;
-  if (strcmp(p->UpdateTime, "09:14:00") == 0) {
-    curMinute = "15";									// The first KLine include data of 9:14:00
-  }
+  /*string kLineTime = getKLineTimeForTickTime(p->UpdateTime);
+  if(FuturesUtil::getExchangeFromSymbol(symbol) == CFFEX && kLineTime == "09:15:00")
+    kLineTime = "09:16:00";
+  if (timeToOneMinuteKLinesMap.find(kLineTime) != timeToOneMinuteKLinesMap.end()) {
+      timeToOneMinuteKLinesMap[kLineTime].feedTick(p, preTick.Volume);
 
-  if (isFirstTick)
-  {
-    firstTickTime = p->UpdateTime;
-    isFirstTick = false;
-    firstTickMinute = curMinute;
-    lastMinute = curMinute;
-    BOOST_LOG_SEV(lg, info) << "First tick: " << FuturesUtil::futuresTickToString(p);
-    if (firstTickTime == "09:14:00" || firstTickTime == "09:15:00") {
-      startedSinceTradingOrDataLoadingPlaned = true;
-      lastOneMinuteKLine.initWithTick(p, 0);
-    }
-  }
-
-  if (!startedSinceTradingOrDataLoadingPlaned)
-  {
-    if (firstTickMinute == curMinute) {
-      BOOST_LOG_SEV(lg, info) << "Bypassing tick: " << FuturesUtil::futuresTickToString(p) << endl;
-      return;
-    }
-    dataLoadingNeededBeforeFirstOneMinKLine = true;
-    startedSinceTradingOrDataLoadingPlaned = true;
-  }
-
-  /* Start of a new minute, except for the case of 11:30:00 and 15:15:00 */
-  if (curMinute != lastMinute) {
-    lastMinute = curMinute;
-    if (dataLoadingNeededBeforeFirstOneMinKLine && !oneMinuteKLineInitialized) {
-      BOOST_LOG_SEV(lg, info) << "Init first KLine with tick: " << FuturesUtil::futuresTickToString(p) << endl;
-      lastOneMinuteKLine.initWithTick(p, preTick.Volume);
-      oneMinuteKLineInitialized = true;
-    }
-    else if (strcmp(p->UpdateTime, "11:30:00") == 0 || strcmp(p->UpdateTime, "15:15:00") == 0) {
-      lastOneMinuteKLine.feedTick(p, preTick.Volume);
-      feedOneMinuteKLine(lastOneMinuteKLine);
-      lastOneMinuteKLineAddedSecondPlace = true;
-    }
-    else {
-      if (!lastOneMinuteKLineAddedFirstPlace && !lastOneMinuteKLineAddedSecondPlace) {
-        feedOneMinuteKLine(lastOneMinuteKLine);
-        lastOneMinuteKLineAddedSecondPlace = false;
+      if (kLineTime != lastOneMinuteKLineTime) {
+	  vector<string> kLineTimesInBetween = getKLineTimesInBetween(preTick.UpdateTime, p->UpdateTime, true);
+	  lastOneMinuteKLine = timeToOneMinuteKLinesMap[lastOneMinuteKLineTime];
+	  for(unsigned i = 0; i < kLineTimesInBetween.size(); ++i) {
+	      strcpy(lastOneMinuteKLine.time, kLineTimesInBetween[i].c_str());
+	      feedOneMinuteKLine(lastOneMinuteKLine);
+	  }
+	  lastOneMinuteKLineTime = kLineTime;
       }
-      lastOneMinuteKLine = KLine(p, preTick.Volume);
-    }
-    lastOneMinuteKLineAddedFirstPlace = false;
-  }
-  else
-    lastOneMinuteKLine.feedTick(p, preTick.Volume);
-
-  if (p->UpdateMillisec >= 500 && timeComponents[2] == "59" && strcmp(p->UpdateTime, "11:29:59") != 0 && strcmp(p->UpdateTime, "15:14:59") != 0) {
-    feedOneMinuteKLine(lastOneMinuteKLine);
-    lastOneMinuteKLineAddedFirstPlace = true;
-  }
+  }*/
 }

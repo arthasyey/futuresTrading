@@ -2,9 +2,7 @@
 #include <boost/filesystem.hpp>
 #include <utility>
 
-
 vector<int> kLinePeriods = { 5, 15, 30, 60 };
-
 
 MyTraderSpi::MyTraderSpi(const FuturesConfigInfo& _config) : config(_config) {
   pTraderApi = CThostFtdcTraderApi::CreateFtdcTraderApi();
@@ -24,7 +22,7 @@ void MyTraderSpi::OnFrontConnected() {
   strcpy(req.Password, config.Password.c_str());
 
   int iResult = pTraderApi->ReqUserLogin(&req, ++requestId);
-  BOOST_LOG_SEV(lg, info) << "--->>>" << __PRETTY_FUNCTION__ << ((iResult == 0) ? "success" : "failure") << endl;
+  LOG_BOOST << "--->>>" << __PRETTY_FUNCTION__ << ((iResult == 0) ? "success" : "failure") << endl;
 }
 
 void MyTraderSpi::requestQryInstrument(const string& exchange) {
@@ -42,14 +40,14 @@ void MyTraderSpi::requestQryInstrument(const string& exchange) {
 }
 
 void MyTraderSpi::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {
-  BOOST_LOG_SEV(lg, info) << "user :: " << nRequestID << " :: "
+  LOG_BOOST << "user :: " << nRequestID << " :: "
       << pRspUserLogin->TradingDay << " :: "
       << pRspUserLogin->LoginTime << " :: "
       << pRspUserLogin->BrokerID << " :: "
       << pRspUserLogin->UserID << " :: "
       << pRspUserLogin->SystemName << endl;
 
-  requestQryInstrument("CFFEX");
+  requestQryInstrument(CFFEX);
 }
 
 void MyTraderSpi::OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {
@@ -69,11 +67,11 @@ void MyTraderSpi::OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CTh
   if (bIsLast)
   {
     if(lastExchangeStr == CFFEX )
-      requestQryInstrument(SHFEX);
-    else if (lastExchangeStr == SHFEX)
-      requestQryInstrument(DCEX);
-    else if (lastExchangeStr == DCEX)
-      requestQryInstrument(CZCEX);
+      requestQryInstrument(SHFE);
+    else if (lastExchangeStr == SHFE)
+      requestQryInstrument(DCE);
+    else if (lastExchangeStr == DCE)
+      requestQryInstrument(CZCE);
     else
       cerr << "finish req instrument ... " << endl;
     return;
@@ -119,9 +117,11 @@ void DataRecorder::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CT
     string directory = DATA_ROOT + instrument + "/";
     boost::filesystem::create_directory(directory);
 
-    shared_ptr<ofstream> tickOutputStream(new ofstream(directory + FuturesUtil::getCurrentDateString() + ".csv"));
+    string fileName = directory + FuturesUtil::getCurrentDateString() + ".csv";
+    shared_ptr<ofstream> tickOutputStream(new ofstream(fileName.c_str(), ios_base::out | ios_base::app));
     tickOutputStream->precision(8);
-    *tickOutputStream << "updateTime,updateMillis,lastPrice,avgPrice,bidPrice1,askPrice1,bidVolume1,askVolume1,volume" << endl;
+    if(!boost::filesystem::exists(fileName.c_str()))
+      *tickOutputStream << "updateTime,updateMillis,lastPrice,avgPrice,bidPrice1,askPrice1,bidVolume1,askVolume1,volume" << endl;
 
     tickOutputStreams[instrument] = tickOutputStream;
     accuVolumes[instrument] = 0;

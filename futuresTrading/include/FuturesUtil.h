@@ -1,9 +1,8 @@
 #ifndef _FUTURES_UTIL_
 #define _FUTURES_UTIL_
 
-#include "FuturesDataStructures.h"
-#include "logging.h"
-#include "../ctp/ThostFtdcUserApiStruct.h"
+#include <FuturesDataStructures.h>
+#include <logging.h>
 
 #include <string>
 #include <boost/algorithm/string/replace.hpp>
@@ -14,7 +13,6 @@ using namespace std;
 
 #define FuturesDbName "futures";
 
-extern src::severity_logger< severity_level > lg;
 
 #define LOG_BOOST BOOST_LOG_SEV(lg, info) << "--->>> " << __PRETTY_FUNCTION__
 
@@ -34,7 +32,7 @@ template<typename T> string toString(T val){
   return ss.str();
 }
 
-struct FuturesUtil{
+struct FuturesUtil {
   /************************************************************************/
   /* Translating the CTP data structures                                                                     */
   /************************************************************************/
@@ -84,6 +82,13 @@ struct FuturesUtil{
     return b == 0 ? 0 : a / b;
   }
 
+  static string getContractTypeFromSymbol(const string& symbol);
+
+  static string getExchangeFromSymbol(const string& symbol);
+
+  static map<string, FuturesContractInfo> initContractInfos();
+
+  FuturesUtil();
 };
 
 

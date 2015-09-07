@@ -1,6 +1,5 @@
 #include "3maNew.h"
 
-
 int main(int argc, char* argv[]){
   assert(argc == 3 && "3ma_sim.exe symbol date");
 
