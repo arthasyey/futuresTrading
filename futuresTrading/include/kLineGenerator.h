@@ -25,9 +25,9 @@ protected:
   string getKLineTimeForTickTime(const string& tickTime);
   vector<string> getKLineTimesInBetween(const string& start, const string& end, bool built = false);
 public:
-  KLineGenerator(const string& _date, const string& _symbol, const vector<int> &_kLineMinutePeriods);
+  KLineGenerator(const string& _date, const string& _symbol, const vector<int> &_kLineMinutePeriods, bool loadLiveData = true);
 
-  void initOneMinuteKLines();
+  void initOneMinuteKLines(bool loadLiveData);
 
   void feedTickData(CThostFtdcDepthMarketDataField * p);
   virtual void OnOneMinuteKLineInserted() {};

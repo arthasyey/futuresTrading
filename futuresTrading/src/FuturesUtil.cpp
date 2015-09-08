@@ -5,8 +5,9 @@
 #include <limits>
 #include <algorithm>
 #include <functional>
-#include <boost/filesystem.hpp>
 #include <json.h>
+#include <boost/filesystem.hpp>
+#include <boost/algorithm/string.hpp>
 
 using namespace boost::filesystem;
 
@@ -543,5 +544,6 @@ string FuturesUtil::getExchangeFromSymbol(const string& symbol) {
 string FuturesUtil::getContractTypeFromSymbol(const string& symbol) {
   string s(symbol);
   s.erase(remove_if(s.begin(), s.end(), std::ptr_fun(::isdigit)), s.end());
+  boost::to_upper(s);
   return s;
 }

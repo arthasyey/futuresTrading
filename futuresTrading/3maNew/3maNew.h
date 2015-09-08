@@ -134,7 +134,7 @@ string ThreeMAClass<mode>::getStrategyId() {
 
 template<LaunchMode mode>
 ThreeMAClass<mode>::ThreeMAClass(const FuturesConfigInfo &config) :
-KLineGenerator(config.simDate == "" ? FuturesUtil::getCurrentDateString() : config.simDate, config.Symbol, vector<int>(1, 5)), FuturesTradeClient<mode>(config) {
+KLineGenerator(config.simDate == "" ? FuturesUtil::getCurrentDateString() : config.simDate, config.Symbol, vector<int>(1, 5), config.simDate == ""), FuturesTradeClient<mode>(config) {
   FuturesTradeClient<mode>::iRequestID = 130000000;
   fillLastNDaysKLineMysql(7);
   loadLastPosition();
@@ -531,11 +531,6 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
   }
 
   KLineGenerator::feedTickData(p);
-}
-
-template<>
-void ThreeMAClass<SIM>::OnNotOneMinuteKLineInserted(int periodIdx) {
-
 }
 
 template<LaunchMode mode>

@@ -1,15 +1,15 @@
 #include <kLineGenerator.h>
 #include <FuturesUtil.h>
 
-KLineGenerator::KLineGenerator(const string& _date, const string& _symbol, const vector<int> &_kLineMinutePeriods)
+KLineGenerator::KLineGenerator(const string& _date, const string& _symbol, const vector<int> &_kLineMinutePeriods, bool loadLiveData)
 :date(boost::replace_all_copy(_date, "-", "")), symbol(_symbol), kLineMinutePeriods(_kLineMinutePeriods), notOneMinuteKLines(_kLineMinutePeriods.size(), vector<KLine>()),
  notOneMinuteKLineWorkingSet(_kLineMinutePeriods.size(), vector<KLine>()) {
-  initOneMinuteKLines();
+  initOneMinuteKLines(loadLiveData);
   memset(&preTick, 0, sizeof(CThostFtdcDepthMarketDataField));
   memset(&curTick, 0, sizeof(CThostFtdcDepthMarketDataField));
 }
 
-void KLineGenerator::initOneMinuteKLines() {
+void KLineGenerator::initOneMinuteKLines(bool loadLiveData) {
   FuturesContractInfo contractInfo = contractInfos[FuturesUtil::getContractTypeFromSymbol(symbol)];
   cout << "Periods!";
   for(unsigned i = 0; i < contractInfo.tradingPeriods.size(); ++i) {
@@ -26,19 +26,21 @@ void KLineGenerator::initOneMinuteKLines() {
       }
   }
 
-  string query = (boost::format("select * from futures.%1%k where period=1 and symbol = '%2%'") % date % symbol).str();
-  ResultSet* res = mysqlConnector.query(query);
-  while (res && res->next()) {
-      KLine oneMissedOneMinuteKLine;
-      strcpy(oneMissedOneMinuteKLine.symbol, symbol.c_str());
-      strcpy(oneMissedOneMinuteKLine.date, date.c_str());
-      strcpy(oneMissedOneMinuteKLine.time, res->getString("time").c_str());
-      oneMissedOneMinuteKLine.open = res->getDouble("open");
-      oneMissedOneMinuteKLine.high = res->getDouble("high");
-      oneMissedOneMinuteKLine.low = res->getDouble("low");
-      oneMissedOneMinuteKLine.close = res->getDouble("close");
-      oneMissedOneMinuteKLine.volume = res->getDouble("volume");
-      feedOneMinuteKLine(oneMissedOneMinuteKLine);
+  if(loadLiveData) {
+      string query = (boost::format("select * from futures.%1%k where period=1 and symbol = '%2%'") % date % symbol).str();
+      ResultSet* res = mysqlConnector.query(query);
+      while (res && res->next()) {
+	  KLine oneMissedOneMinuteKLine;
+	  strcpy(oneMissedOneMinuteKLine.symbol, symbol.c_str());
+	  strcpy(oneMissedOneMinuteKLine.date, date.c_str());
+	  strcpy(oneMissedOneMinuteKLine.time, res->getString("time").c_str());
+	  oneMissedOneMinuteKLine.open = res->getDouble("open");
+	  oneMissedOneMinuteKLine.high = res->getDouble("high");
+	  oneMissedOneMinuteKLine.low = res->getDouble("low");
+	  oneMissedOneMinuteKLine.close = res->getDouble("close");
+	  oneMissedOneMinuteKLine.volume = res->getDouble("volume");
+	  feedOneMinuteKLine(oneMissedOneMinuteKLine);
+      }
   }
 }
 
@@ -118,7 +120,7 @@ string KLineGenerator::getKLineTimeForTickTime(const string& tickTime) {
 }
 
 void KLineGenerator::generateOneMinuteKLine(CThostFtdcDepthMarketDataField *p) {
-  /*string kLineTime = getKLineTimeForTickTime(p->UpdateTime);
+  string kLineTime = getKLineTimeForTickTime(p->UpdateTime);
   if(FuturesUtil::getExchangeFromSymbol(symbol) == CFFEX && kLineTime == "09:15:00")
     kLineTime = "09:16:00";
   if (timeToOneMinuteKLinesMap.find(kLineTime) != timeToOneMinuteKLinesMap.end()) {
@@ -133,5 +135,5 @@ void KLineGenerator::generateOneMinuteKLine(CThostFtdcDepthMarketDataField *p) {
 	  }
 	  lastOneMinuteKLineTime = kLineTime;
       }
-  }*/
+  }
 }
