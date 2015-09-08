@@ -6,7 +6,7 @@ FeedHandler::FeedHandler(const FuturesConfigInfo& _configInfo) : config(_configI
   pMdApi->RegisterSpi(this);
   pMdApi->Init();
   pMdApi->RegisterFront(const_cast<char*>(config.MdFrontAddr.c_str()));
-  feedPublisher.bind("tcp:///tmp/futuresFeeds");
+  feedPublisher.bind("ipc:///tmp/futuresFeeds");
 }
 
 void FeedHandler::OnFrontConnected() {

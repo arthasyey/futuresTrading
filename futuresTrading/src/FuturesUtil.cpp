@@ -394,31 +394,31 @@ string FuturesUtil::orderStatusToString(TThostFtdcOrderStatusType status) {
   switch (status)
   {
     case THOST_FTDC_OST_AllTraded:
-      return "ȫ���ɽ�";
+      return "AllTraded";
 
     case THOST_FTDC_OST_PartTradedQueueing:
-      return "���ֳɽ����ڶ�����";
+      return "PartTradedQueueing";
 
     case THOST_FTDC_OST_PartTradedNotQueueing:
-      return "���ֳɽ����ڶ�����";
+      return "PartTradedNotQueueing";
 
     case THOST_FTDC_OST_NoTradeQueueing:
-      return "δ�ɽ����ڶ�����";
+      return "NoTradeQueueing";
 
     case THOST_FTDC_OST_NoTradeNotQueueing:
-      return "δ�ɽ����ڶ�����";
+      return "NoTradeNotQueueing";
 
     case THOST_FTDC_OST_Canceled:
-      return "����";
+      return "Canceled";
 
     case THOST_FTDC_OST_Unknown:
-      return "δ֪";
+      return "Unknown";
 
     case THOST_FTDC_OST_NotTouched:
-      return "��δ����";
+      return "NotTouched";
 
     case THOST_FTDC_OST_Touched:
-      return "�Ѵ���";
+      return "Touched";
 
     default:
       return "NA";
@@ -430,19 +430,19 @@ string FuturesUtil::orderSubmissionStatusToString(TThostFtdcOrderSubmitStatusTyp
   switch (status)
   {
     case THOST_FTDC_OSS_InsertSubmitted:
-      return "�Ѿ��ύ";
+      return "InsertSubmitted";
     case THOST_FTDC_OSS_CancelSubmitted:
-      return "�����Ѿ��ύ";
+      return "CancelSubmitted";
     case THOST_FTDC_OSS_ModifySubmitted:
-      return  "�޸��Ѿ��ύ";
+      return  "ModifySubmitted";
     case THOST_FTDC_OSS_Accepted:
-      return  "�Ѿ�����";
+      return  "Accepted";
     case THOST_FTDC_OSS_InsertRejected:
-      return  "�����Ѿ����ܾ�";
+      return  "InsertRejected";
     case THOST_FTDC_OSS_CancelRejected:
-      return  "�����Ѿ����ܾ�";
+      return  "CancelRejected";
     case THOST_FTDC_OSS_ModifyRejected:
-      return  "�ĵ��Ѿ����ܾ�";
+      return  "ModifyRejected";
 
     default:
       return "NA";

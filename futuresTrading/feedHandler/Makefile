@@ -5,7 +5,7 @@ SOURCES=main.cpp feedHandler.cpp ../src/FuturesUtil.cpp ../src/logging.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=feedHandler.exe
 
-LIBS += -L../libs -lboost_system -lboost_filesystem -lboost_date_time -lboost_thread -lboost_log_setup -lboost_log -lpthread -ldl -lthostmduserapi -lzmq
+LIBS += -L../libs -lboost_system -lboost_filesystem -lboost_date_time -lboost_thread -lboost_log_setup -lboost_log -lpthread -ldl -lthostmduserapi -lzmq -ljson-c
 INCLUDES += -I../include -I../ctp -Wl,-rpath=.
 
 all: $(SOURCES) $(EXECUTABLE)

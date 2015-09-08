@@ -11,18 +11,15 @@ KLineGenerator::KLineGenerator(const string& _date, const string& _symbol, const
 
 void KLineGenerator::initOneMinuteKLines(bool loadLiveData) {
   FuturesContractInfo contractInfo = contractInfos[FuturesUtil::getContractTypeFromSymbol(symbol)];
-  cout << "Periods!";
   for(unsigned i = 0; i < contractInfo.tradingPeriods.size(); ++i) {
       string &start = contractInfo.tradingPeriods[i].first;
       string &end = contractInfo.tradingPeriods[i].second;
-      cout << "start: " << start << " end: " << end << endl;
       vector<string> kLineTimesInBetween = getKLineTimesInBetween(start, end);
       if(lastOneMinuteKLineTime == "")
 	lastOneMinuteKLineTime = kLineTimesInBetween[0];
 
       for(unsigned i = 0; i < kLineTimesInBetween.size(); ++i) {
-	  timeToOneMinuteKLinesMap[kLineTimesInBetween[i]] = KLine(symbol);
-	  cout << "prebuild kline: " << kLineTimesInBetween[i] << endl;
+	  timeToOneMinuteKLinesMap[kLineTimesInBetween[i]] = KLine(symbol, date);
       }
   }
 
@@ -46,37 +43,37 @@ void KLineGenerator::initOneMinuteKLines(bool loadLiveData) {
 
 vector<string> KLineGenerator::getKLineTimesInBetween(const string& start, const string& end, bool oneMinuteKLinesPrebuilt) {
   vector<string> ret;
-  if(!oneMinuteKLinesPrebuilt) {
-      vector<string> startSegments = split(start, ':');
-      vector<string> endSegments = split(end, ':');
-      int startHour = atoi(startSegments[0].c_str());
-      int startMinute = atoi(startSegments[1].c_str());
-      int endHour = atoi(endSegments[0].c_str());
-      int endMinute = atoi(endSegments[1].c_str());
-      for(int h = startHour; h <= endHour; ++h) {
-	  int mHead = h == startHour ? startMinute + 1 : 0;
-	  int mEnd = h == endHour ? endMinute : 59;
-	  for(int m = mHead; m <= mEnd; ++m) {
-	      stringstream ss;
-	      if(h < 10)
-		ss << '0';
-	      ss << h << ':';
-	      if(m < 10)
-		ss << '0';
-	      ss << m << ":00";
-	      ret.push_back(ss.str());
+  if(start <= end) {
+      if(!oneMinuteKLinesPrebuilt) {
+	  vector<string> startSegments = split(start, ':');
+	  vector<string> endSegments = split(end, ':');
+	  int startHour = atoi(startSegments[0].c_str());
+	  int startMinute = atoi(startSegments[1].c_str());
+	  int endHour = atoi(endSegments[0].c_str());
+	  int endMinute = atoi(endSegments[1].c_str());
+	  for(int h = startHour; h <= endHour; ++h) {
+	      int mHead = h == startHour ? startMinute + 1 : 0;
+	      int mEnd = h == endHour ? endMinute : 59;
+	      for(int m = mHead; m <= mEnd; ++m) {
+		  stringstream ss;
+		  if(h < 10)
+		    ss << '0';
+		  ss << h << ':';
+		  if(m < 10)
+		    ss << '0';
+		  ss << m << ":00";
+		  ret.push_back(ss.str());
+	      }
 	  }
+      } else {
+	  for(auto iter = timeToOneMinuteKLinesMap.upper_bound(start); iter != timeToOneMinuteKLinesMap.upper_bound(end); ++iter)
+	    ret.push_back(iter->first);
       }
-  } else {
-      for(auto iter = timeToOneMinuteKLinesMap.upper_bound(start); iter != timeToOneMinuteKLinesMap.upper_bound(end); ++iter)
-	ret.push_back(iter->first);
   }
   return ret;
 }
 
 void KLineGenerator::feedTickData(CThostFtdcDepthMarketDataField * p) {
-  preTick = curTick;
-  curTick = *p;
   generateOneMinuteKLine(p);
 }
 
@@ -124,6 +121,8 @@ void KLineGenerator::generateOneMinuteKLine(CThostFtdcDepthMarketDataField *p) {
   if(FuturesUtil::getExchangeFromSymbol(symbol) == CFFEX && kLineTime == "09:15:00")
     kLineTime = "09:16:00";
   if (timeToOneMinuteKLinesMap.find(kLineTime) != timeToOneMinuteKLinesMap.end()) {
+      preTick = curTick;
+      curTick = *p;
       timeToOneMinuteKLinesMap[kLineTime].feedTick(p, preTick.Volume);
 
       if (kLineTime != lastOneMinuteKLineTime) {

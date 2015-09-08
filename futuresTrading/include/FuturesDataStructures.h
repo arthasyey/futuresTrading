@@ -126,8 +126,9 @@ struct KLine{
 
   KLine() :high(0), low(100000){}
 
-  KLine(const string& _symbol): high(0), low(10000), volume(0), tickCount(0) {
+  KLine(const string& _symbol, const string& _date): high(0), low(10000), volume(0), tickCount(0) {
     strcpy(symbol, _symbol.c_str());
+    strcpy(date, _date.c_str());
   }
 
   string toString() const {
