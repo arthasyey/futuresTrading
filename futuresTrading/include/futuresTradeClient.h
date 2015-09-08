@@ -30,7 +30,6 @@ protected:
   int remainingPositionsToBeOpened = 0;
   int remainingPositionsToBeClosed = 0;
 
-
   map<string, CThostFtdcOrderField> orderRefToInfoMap;
   int size;
   FuturesConfigInfo configInfo;

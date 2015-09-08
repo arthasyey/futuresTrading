@@ -125,7 +125,7 @@ void DataRecorder::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin, CT
 
     tickOutputStreams[instrument] = tickOutputStream;
     accuVolumes[instrument] = 0;
-    accuTurnovers[instrument] = 0;
+    lastAggregateAvgPrice[instrument] = 0;
     klineGenerators[instrument] = shared_ptr<MyKlineGenerator>(new MyKlineGenerator(instrument));
   }
   pMdApi->SubscribeMarketData(pInstruments, count);
@@ -139,9 +139,10 @@ void DataRecorder::OnRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDepthMa
   string instrument = pDepthMarketData->InstrumentID;
 
   int newVolume = pDepthMarketData->Volume;
+  double newAggAvgPrice = pDepthMarketData->AveragePrice;
+
   int volume = newVolume - accuVolumes[instrument];
-  double newTurnOver = pDepthMarketData->Turnover;
-  double avgPrice = (newTurnOver - accuTurnovers[instrument]) / volume / 300;
+  double avgPrice = (newVolume * newAggAvgPrice - lastAggregateAvgPrice[instrument] * accuVolumes[instrument]) / volume;
 
   *tickOutputStreams[instrument] << pDepthMarketData->UpdateTime << ","
       << pDepthMarketData->UpdateMillisec << ","
@@ -153,13 +154,13 @@ void DataRecorder::OnRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDepthMa
       << pDepthMarketData->AskVolume1 << ","
       << volume << endl;
 
-  accuTurnovers[instrument] = newTurnOver;
+  lastAggregateAvgPrice[instrument] = newAggAvgPrice;
   accuVolumes[instrument] = newVolume;
 
   klineGenerators[instrument]->feedTickData(pDepthMarketData);
 }
 
-MyKlineGenerator::MyKlineGenerator(const string& contract) : KLineGenerator(FuturesUtil::getCurrentDateString(), contract, kLinePeriods){}
+MyKlineGenerator::MyKlineGenerator(const string& contract) : KLineGenerator(FuturesUtil::getCurrentDateString(), contract, kLinePeriods, false){}
 
 void MyKlineGenerator::OnOneMinuteKLineInserted() {
   string query = (boost::format(INSERT_KLINE_QUERY)
