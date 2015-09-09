@@ -142,7 +142,7 @@ void DataRecorder::OnRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDepthMa
   double newAggAvgPrice = pDepthMarketData->AveragePrice;
 
   int volume = newVolume - accuVolumes[instrument];
-  double avgPrice = (newVolume * newAggAvgPrice - lastAggregateAvgPrice[instrument] * accuVolumes[instrument]) / volume;
+  double avgPrice = volume == 0 ? pDepthMarketData->LastPrice : (newVolume * newAggAvgPrice - lastAggregateAvgPrice[instrument] * accuVolumes[instrument]) / volume;
 
   *tickOutputStreams[instrument] << pDepthMarketData->UpdateTime << ","
       << pDepthMarketData->UpdateMillisec << ","
