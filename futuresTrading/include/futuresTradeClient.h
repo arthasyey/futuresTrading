@@ -88,6 +88,8 @@ public:
   virtual void onOrderRejected(RejectInfo *pInfo);
   virtual void onCancelRejected(RejectInfo *pInfo);
 
+  virtual void onTradeEnd() {}
+
   void initLogger() {
     stringstream ss;
     ss << getStrategyId() << "\\" << getStrategyId() << "_%Y%m%d_%N.log";
@@ -152,6 +154,7 @@ void FuturesTradeClient<SIM>::run() {
       lastTick = feed;
       this->onFeed(&feed);
   }
+  onTradeEnd();
 }
 
 template<>

@@ -3,13 +3,19 @@
 
 #include <kLineGenerator.h>
 #include <futuresTradeClient.h>
+#include <algorithm>
 
+#define LOAD_LAST_POSITION_SQL	"select * from futuresTradingRecord.%1% where strategyId = '%2%' and date < '%3%' order by date desc limit 0, 1"
+#define SAVE_RECORD_SQL		"replace into futuresTradingRecord.%1%(strategyId, symbol, date, state, size, basisPrice, trailingMaxPnl, memo) values('%2%', '%3%', '%4%', %5%, %6%, %7%, %8%, '')"
+#define SELECT_KLINE_SQL	"select * from futures.%1% where symbol='%2%' and period = 5 order by time asc"
 
 template<LaunchMode mode>
 class ThreeMAClass: public KLineGenerator, public FuturesTradeClient<mode> {
 private:
+  double realizedPnl = 0;
+
+  string POSITION_RECORD_TABLE;
   string TRADE_RECORD_TABLE;
-  string ORDER_RECORD_TABLE;
   enum State {
     NoPosition,
     LongWatching,
@@ -44,6 +50,7 @@ private:
     case None: return"None ";
     case LongD: return "LongD ";
     case ShortD: return "ShortD ";
+    default: return "WrongState";
     }
   }
 
@@ -51,7 +58,6 @@ public:
   ThreeMAClass(const FuturesConfigInfo& configInfo);
 
   void fillLastNDaysKLineMysql(int n);
-  void fillPastKlineMySql();
   void loadLastPosition();
   string getStrategyId();
   void saveTodayPosition();
@@ -64,6 +70,8 @@ public:
   virtual void OnNotOneMinuteKLineInserted(int periodIndex);
 
   virtual void OnOneMinuteKLineInserted();
+
+  virtual void onTradeEnd();
 
   void calculateParameters();
 
@@ -118,13 +126,40 @@ public:
   ~ThreeMAClass() {}
 };
 
-
-template<LaunchMode mode>
-void ThreeMAClass<mode>::fillPastKlineMySql() {
-}
-
 template<LaunchMode mode>
 void ThreeMAClass<mode>::fillLastNDaysKLineMysql(int n) {
+  string query = "show tables from futures where Tables_in_futures < " + date;
+  ResultSet *res = mysqlConnector.query(query);
+  if (!res) {
+      BOOST_LOG_SEV(lg, fatal) << "DB query last trading day failed";
+      exit(-1);
+  }
+  vector<string> tradingDays;
+  while (res->next()) {
+      string lastTradingDay = res->getString(1);
+      tradingDays.push_back(lastTradingDay);
+  }
+
+  for (int i = min((size_t)n, tradingDays.size()); i > 0; --i) {
+      string tableName = tradingDays[tradingDays.size() - i];
+      string query = (boost::format(SELECT_KLINE_SQL) % tableName % symbol).str();
+
+      vector<KLine> &fiveMinuteKLines = notOneMinuteKLines[0];
+      res = mysqlConnector.query(query);
+      while (res && res->next()) {
+	  KLine oneKLine;
+	  strcpy(oneKLine.date, tableName.substr(0, 8).c_str());
+	  strcpy(oneKLine.symbol, symbol.c_str());
+	  oneKLine.open = res->getDouble("open");
+	  oneKLine.high = res->getDouble("high");
+	  oneKLine.low = res->getDouble("low");
+	  oneKLine.close = res->getDouble("close");
+	  oneKLine.volume = res->getInt("volume");
+	  strcpy(oneKLine.time, res->getString("time").c_str());
+	  fiveMinuteKLines.push_back(oneKLine);
+	  calculateParameters();
+	}
+    }
 }
 
 template<LaunchMode mode>
@@ -136,42 +171,38 @@ template<LaunchMode mode>
 ThreeMAClass<mode>::ThreeMAClass(const FuturesConfigInfo &config) :
 KLineGenerator(config.simDate == "" ? FuturesUtil::getCurrentDateString() : config.simDate, config.Symbol, vector<int>(1, 5), config.simDate == ""), FuturesTradeClient<mode>(config) {
   FuturesTradeClient<mode>::iRequestID = 130000000;
+  if(config.simDate != "") {
+    POSITION_RECORD_TABLE = "dailyPositionRecordSim";
+    TRADE_RECORD_TABLE = "dailyTradeRecordSim";
+  } else {
+    POSITION_RECORD_TABLE = "dailyPositionRecord";
+    TRADE_RECORD_TABLE = "dailyTradeRecord";
+  }
   fillLastNDaysKLineMysql(7);
   loadLastPosition();
-  if(config.simDate != "") {
-    TRADE_RECORD_TABLE = "dailyTradeRecordSim";
-    ORDER_RECORD_TABLE = "dailyOrderRecordSim";
-  } else {
-    TRADE_RECORD_TABLE = "dailyTradeRecord";
-    ORDER_RECORD_TABLE = "dailyOrderRecord";
-  }
 }
 
 
 template<LaunchMode mode>
 void ThreeMAClass<mode>::loadLastPosition() {
-  /*string& query = (boost::format("select * from Noah.%1% where strategyId = '%2%' and date < '%3%' order by date desc limit 0, 1") % TRADE_RECORD_TABLE % getStrategyId() % date).str();
+  string query = (boost::format(LOAD_LAST_POSITION_SQL) % POSITION_RECORD_TABLE % getStrategyId() % date).str();
   ResultSet* res = mysqlConnector.query(query);
   if (res && res->next())
   {
   state = (State)res->getInt("state");
-  size = res->getInt("size");
+  this->size = res->getInt("size");
   basisPrice = res->getDouble("basisPrice");
   trailingMaxPnl = res->getDouble("trailingMaxPnl");
-  BOOST_LOG_SEV(lg, info) << "3MA " << "Load last position: " << stateToString(state) << " basisPrice: " << basisPrice << " trailingMaxPnl: " << trailingMaxPnl;
-  } */
+  LOG_BOOST << "3MA " << "Load last position: " << stateToString(state) << " basisPrice: " << basisPrice << " trailingMaxPnl: " << trailingMaxPnl;
+  }
 }
 
 template<LaunchMode mode>
 void ThreeMAClass<mode>::saveTodayPosition() {
-  int position = 0;
-  if (state == Long || state == LongTrailingStarted)
-    position = this->size;
-  else if (state == Short || state == ShortTrailingStarted)
-    position = -this->size;
-  string query = (boost::format("replace into futures.%1%(strategyId, date, contract, state, size, position, basisPrice, trailingMaxPnl, memo) values('%2%', '%3%', '%4%', %5%, %6%, %7%, %8%, %9%, '')")
-    % TRADE_RECORD_TABLE % getStrategyId() % date % symbol % state % this->size % position % basisPrice % trailingMaxPnl).str();
+  string query = (boost::format(SAVE_RECORD_SQL)
+    % POSITION_RECORD_TABLE % getStrategyId() % symbol % date % state % this->size  % basisPrice % trailingMaxPnl).str();
   mysqlConnector.executeUpdate(query);
+  LOG_BOOST << query;
 }
 
 template<LaunchMode mode>
@@ -182,7 +213,7 @@ void ThreeMAClass<mode>::dumpParam() {
     << notOneMinuteKLines[0].back().low << "," << notOneMinuteKLines[0].back().close << "," << notOneMinuteKLines[0].back().volume << ","
     << MA1 << "," << MA2 << "," << MAF1 << "," << MAF2 << ","
     << MAF3 << "," << Hi << "," << Lo << "," << newH << "," << countH << "," << newL << "," << countL << "," << tenKLineH << "," << tenKLineL << endl;
-  BOOST_LOG_SEV(lg, info) << "3MA " << ss.str();
+  LOG_BOOST << "3MA " << ss.str();
 }
 
 template<LaunchMode mode>
@@ -208,7 +239,7 @@ void ThreeMAClass<mode>::dumpStatus(CThostFtdcDepthMarketDataField * p) {
     << " last price: " << p->LastPrice
     << " numKLines: " << notOneMinuteKLines[0].size()
     << " Last KLine: " << notOneMinuteKLines[0].back().toString();
-  BOOST_LOG_SEV(lg, info) << "3MA " << ss.str();
+  LOG_BOOST << "3MA " << ss.str();
 }
 
 template<LaunchMode mode>
@@ -224,16 +255,16 @@ void ThreeMAClass<mode>::OnNotOneMinuteKLineInserted(int periodIndex) {
                if (lastKLine.close > MA1 && MA1 > MA2 && lastKLine.high > Hi && lastKLine.close < (Hi + adjust)) {
                  anchorKLineHigh = lastKLine.high;
                  state = LongWatching;
-                 BOOST_LOG_SEV(lg, info) << "3MA " << "State change to Long watching, At Time--->" << curTick.UpdateTime << endl;
+                 LOG_BOOST << "3MA " << "State change to Long watching, At Time--->" << curTick.UpdateTime << endl;
                }
                else if (lastKLine.close < MA1 && MA1 < MA2 && lastKLine.low < Lo && lastKLine.close >(Lo - adjust)) {
                  anchorKLineLow = lastKLine.low;
                  state = ShortWatching;
-                 BOOST_LOG_SEV(lg, info) << "3MA " << "State change to Short watching, At Time--->" << curTick.UpdateTime << endl;
+                 LOG_BOOST << "3MA " << "State change to Short watching, At Time--->" << curTick.UpdateTime << endl;
                }
                else {
                  state = NoPosition;
-                 BOOST_LOG_SEV(lg, info) << "3MA " << "Cur state: NoPosition , At Time--->" << curTick.UpdateTime << endl;
+                 LOG_BOOST << "3MA " << "Cur state: NoPosition , At Time--->" << curTick.UpdateTime << endl;
                }
                break;
   }
@@ -251,7 +282,7 @@ void ThreeMAClass<mode>::OnNotOneMinuteKLineInserted(int periodIndex) {
                   tenKLineL = 1000000;
                   for (int i = 0; i < 10; ++i)
                     tenKLineL = min(tenKLineL, fiveMinuteKLines[fiveMinuteKLines.size() - 1 - i].low);
-                  BOOST_LOG_SEV(lg, info) << "3MA " << "Long state, update newH, countH, tenKLineL, At Time--->" << curTick.UpdateTime << endl;
+                  LOG_BOOST << "3MA " << "Long state, update newH, countH, tenKLineL, At Time--->" << curTick.UpdateTime << endl;
                   break;
   }
   case Short:
@@ -269,7 +300,7 @@ void ThreeMAClass<mode>::OnNotOneMinuteKLineInserted(int periodIndex) {
                    for (int i = 0; i < 10; ++i)
                      tenKLineH = max(tenKLineH, fiveMinuteKLines[fiveMinuteKLines.size() - 1 - i].high);
 
-                   BOOST_LOG_SEV(lg, info) << "3MA " << "Short state, update newL, countL, tenKLineH, At Time--->" << curTick.UpdateTime << endl;
+                   LOG_BOOST << "3MA " << "Short state, update newL, countL, tenKLineH, At Time--->" << curTick.UpdateTime << endl;
                    break;
   }
   default:
@@ -347,12 +378,11 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
   case NoPosition:
     break;
   case LongWatching: {
-               if (floatNumberLessEqual(anchorKLineHigh, p->LastPrice))
-               {
+               if (anchorKLineHigh <= p->LastPrice) {
                  this->insertOrder(symbol, 0.0, this->size, OPEN_LONG);
                  basisPrice = p->AskPrice1;
                  state = Long;
-                 BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Open Long BasisPrice----->" << basisPrice << endl;
+                 LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Open Long BasisPrice----->" << basisPrice << endl;
                  dumpStatus(p);
                  saveTodayPosition();
                }
@@ -364,7 +394,7 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                   if (p->LastPrice <= basisPrice - stopLoss) {
                   this->insertOrder(symbol, 0.0, size, CLOSE_LONG);
                   returnToNoPositionState();
-                  BOOST_LOG_SEV(lg, info) << "3MA " << "StopLoss/Profit Long case 1, At Time--->" << p->UpdateTime << "   Pnl----->" << p->BidPrice1 - basisPrice << endl;
+                  LOG_BOOST << "3MA " << "StopLoss/Profit Long case 1, At Time--->" << p->UpdateTime << "   Pnl----->" << p->BidPrice1 - basisPrice << endl;
                   dumpStatus(p);
                   break;
                   }
@@ -374,7 +404,8 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                     if (p->LastPrice <= MAF3) {
                       this->insertOrder(symbol, 0.0, this->size, CLOSE_LONG);
                       returnToNoPositionState();
-                      BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Long StopLoss/Profit case 2@" << p->BidPrice1 << " , Pnl----->" << p->BidPrice1 - basisPrice << endl;
+                      realizedPnl += p->BidPrice1 - basisPrice;
+                      LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Long StopLoss/Profit case 2@" << p->BidPrice1 << " , Pnl----->" << p->BidPrice1 - basisPrice << endl;
                       dumpStatus(p);
                       saveTodayPosition();
                       break;
@@ -384,7 +415,8 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                     if (p->LastPrice <= MAF2) {
                       this->insertOrder(symbol, 0.0, this->size, CLOSE_LONG);
                       returnToNoPositionState();
-                      BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Long StopLoss/Profit case 3@" << p->BidPrice1 << " , Pnl----->" << p->BidPrice1 - basisPrice << endl;
+                      realizedPnl += p->BidPrice1 - basisPrice;
+                      LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Long StopLoss/Profit case 3@" << p->BidPrice1 << " , Pnl----->" << p->BidPrice1 - basisPrice << endl;
                       dumpStatus(p);
                       saveTodayPosition();
                       break;
@@ -394,7 +426,8 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                     if (p->LastPrice <= MAF1) {
                       this->insertOrder(symbol, 0.0, this->size, CLOSE_LONG);
                       returnToNoPositionState();
-                      BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Long StopLoss/Profit case 4@" << p->BidPrice1 << " ,  Pnl----->" << p->BidPrice1 - basisPrice << endl;
+                      realizedPnl += p->BidPrice1 - basisPrice;
+                      LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Long StopLoss/Profit case 4@" << p->BidPrice1 << " ,  Pnl----->" << p->BidPrice1 - basisPrice << endl;
                       dumpStatus(p);
                       saveTodayPosition();
                       break;
@@ -403,7 +436,8 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                   if (p->LastPrice <= tenKLineL || p->LastPrice <= basisPrice - stopLoss * 2) {
                     this->insertOrder(symbol, 0.0, this->size, CLOSE_LONG);
                     returnToNoPositionState();
-                    BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Long StopLoss/Profit case 5@" << p->BidPrice1 << " , Pnl----->" << p->BidPrice1 - basisPrice << endl;
+                      realizedPnl += p->BidPrice1 - basisPrice;
+                    LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Long StopLoss/Profit case 5@" << p->BidPrice1 << " , Pnl----->" << p->BidPrice1 - basisPrice << endl;
                     dumpStatus(p);
                     saveTodayPosition();
                     break;
@@ -414,7 +448,7 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                     maxPnlTime = p->UpdateTime;
                     maxPnlMillisec = p->UpdateMillisec;
                     maxPnlPrice = p->LastPrice;
-                    BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Move to LongTrailingStarted phase" << endl;
+                    LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Move to LongTrailingStarted phase" << endl;
                     dumpStatus(p);
                     saveTodayPosition();
                   }
@@ -425,10 +459,11 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                       maxPnlPrice = p->LastPrice;
                       trailingMaxPnl = p->LastPrice - basisPrice;
                     }
-                    else	if (floatNumberLessEqual(p->LastPrice - basisPrice, 0.4 * trailingMaxPnl))
+                    else if (floatNumberLessEqual(p->LastPrice - basisPrice, 0.4 * trailingMaxPnl))
                     {
                       this->insertOrder(symbol, 0.0, this->size, CLOSE_LONG);
-                      BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Long, Trailing StopLoss/Profit@" << p->BidPrice1 << " , Pnl----->" << p->BidPrice1 - basisPrice << "MaxPnl----->" << trailingMaxPnl << " MaxPnlTime----->" << maxPnlTime << ":" << maxPnlMillisec << " price:" << maxPnlPrice << endl;
+                      LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Long, Trailing StopLoss/Profit@" << p->BidPrice1 << " , Pnl----->" << p->BidPrice1 - basisPrice << "MaxPnl----->" << trailingMaxPnl << " MaxPnlTime----->" << maxPnlTime << ":" << maxPnlMillisec << " price:" << maxPnlPrice << endl;
+                      realizedPnl += p->BidPrice1 - basisPrice;
                       returnToNoPositionState();
                       dumpStatus(p);
                       saveTodayPosition();
@@ -442,7 +477,7 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                 this->insertOrder(symbol, 0.0, this->size, OPEN_SHORT);
                 basisPrice = p->BidPrice1;
                 state = Short;
-                BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Open Short, BasisPrice----->" << basisPrice << endl;
+                LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Open Short, BasisPrice----->" << basisPrice << endl;
                 dumpStatus(p);
                 saveTodayPosition();
               }
@@ -454,7 +489,7 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                   if (p->LastPrice >= basisPrice + stopLoss) {
                   this->insertOrder(symbol, 0.0, size, CLOSE_SHORT);
                   returnToNoPositionState();
-                  BOOST_LOG_SEV(lg, info) << "3MA " << "StopLoss/Profit Short case 1, At Time--->" << p->UpdateTime << "   Pnl----->" << basisPrice - p->AskPrice1 << endl;
+                  LOG_BOOST << "3MA " << "StopLoss/Profit Short case 1, At Time--->" << p->UpdateTime << "   Pnl----->" << basisPrice - p->AskPrice1 << endl;
                   dumpStatus(p);
                   break;
                   }
@@ -464,7 +499,8 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                     if (p->LastPrice >= MAF3) {
                       this->insertOrder(symbol, 0.0, this->size, CLOSE_SHORT);
                       returnToNoPositionState();
-                      BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Short StopLoss/Profit case 2@" << p->AskPrice1 << " ,  Pnl----->" << basisPrice - p->AskPrice1 << endl;
+                      realizedPnl += basisPrice - p->AskPrice1;
+                      LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Short StopLoss/Profit case 2@" << p->AskPrice1 << " ,  Pnl----->" << basisPrice - p->AskPrice1 << endl;
                       dumpStatus(p);
                       saveTodayPosition();
                       break;
@@ -474,7 +510,8 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                     if (p->LastPrice >= MAF2) {
                       this->insertOrder(symbol, 0.0, this->size, CLOSE_SHORT);
                       returnToNoPositionState();
-                      BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Short StopLoss/Profit case 3@" << p->AskPrice1 << " ,  Pnl----->" << basisPrice - p->AskPrice1 << endl;
+                      realizedPnl += basisPrice - p->AskPrice1;
+                      LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Short StopLoss/Profit case 3@" << p->AskPrice1 << " ,  Pnl----->" << basisPrice - p->AskPrice1 << endl;
                       dumpStatus(p);
                       saveTodayPosition();
                       break;
@@ -484,7 +521,8 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                     if (p->LastPrice >= MAF1) {
                       this->insertOrder(symbol, 0.0, this->size, CLOSE_SHORT);
                       returnToNoPositionState();
-                      BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Short StopLoss/Profit case 4@" << p->AskPrice1 << " , Pnl----->" << basisPrice - p->AskPrice1 << endl;
+                      realizedPnl += basisPrice - p->AskPrice1;
+                      LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Short StopLoss/Profit case 4@" << p->AskPrice1 << " , Pnl----->" << basisPrice - p->AskPrice1 << endl;
                       dumpStatus(p);
                       saveTodayPosition();
                       break;
@@ -493,7 +531,8 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                   if (p->LastPrice >= tenKLineH || p->LastPrice >= basisPrice + stopLoss * 2) {
                     this->insertOrder(symbol, 0.0, this->size, CLOSE_SHORT);
                     returnToNoPositionState();
-                    BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Short StopLoss/Profit case 5@" << p->AskPrice1 << " ,  Pnl----->" << basisPrice - p->AskPrice1 << endl;
+                    realizedPnl += basisPrice - p->AskPrice1;
+                    LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Short StopLoss/Profit case 5@" << p->AskPrice1 << " ,  Pnl----->" << basisPrice - p->AskPrice1 << endl;
                     dumpStatus(p);
                     saveTodayPosition();
                     break;
@@ -504,7 +543,7 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                     maxPnlTime = p->UpdateTime;
                     maxPnlMillisec = p->UpdateMillisec;
                     maxPnlPrice = p->LastPrice;
-                    BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Move to ShortTrailingStarted, curTrailing Pnl----->" << basisPrice - p->AskPrice1 << endl;
+                    LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Move to ShortTrailingStarted, curTrailing Pnl----->" << basisPrice - p->AskPrice1 << endl;
                     dumpStatus(p);
                     saveTodayPosition();
                   }
@@ -518,7 +557,8 @@ void ThreeMAClass<mode>::onFeed(CThostFtdcDepthMarketDataField * p) {
                     else if (floatNumberLessEqual(basisPrice - p->LastPrice, 0.4 * trailingMaxPnl))
                     {
                       this->insertOrder(symbol, 0.0, this->size, CLOSE_SHORT);
-                      BOOST_LOG_SEV(lg, info) << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Short Trailing StopLoss/Profit@" << p->AskPrice1 << " , Pnl----->" << basisPrice - p->AskPrice1 << "MaxPnl----->" << trailingMaxPnl << " MaxPnlTime----->" << maxPnlTime << ":" << maxPnlMillisec << " price:" << maxPnlPrice << endl;
+                      realizedPnl += basisPrice - p->AskPrice1;
+                      LOG_BOOST << "3MA " << FuturesUtil::futuresTickToString(p) << " Close Short Trailing StopLoss/Profit@" << p->AskPrice1 << " , Pnl----->" << basisPrice - p->AskPrice1 << "MaxPnl----->" << trailingMaxPnl << " MaxPnlTime----->" << maxPnlTime << ":" << maxPnlMillisec << " price:" << maxPnlPrice << endl;
                       returnToNoPositionState();
                       dumpStatus(p);
                       saveTodayPosition();
@@ -537,6 +577,14 @@ template<LaunchMode mode>
 void ThreeMAClass<mode>::OnOneMinuteKLineInserted() {
   cout << "Tick: " << this->lastTick.UpdateTime << " kline time: " << lastOneMinuteKLineTime << " kline:" << lastOneMinuteKLine.toString() << endl;
 }
+
+
+template<LaunchMode mode>
+void ThreeMAClass<mode>::onTradeEnd() {
+  cout << realizedPnl;
+}
+
+
 
 
 

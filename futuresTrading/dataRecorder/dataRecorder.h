@@ -70,7 +70,6 @@ public:
   map<string, shared_ptr<MyKlineGenerator>> klineGenerators;
   map<string, int> accuVolumes;
   map<string, double> lastAggregateAvgPrice;
-  map<string, double> accuTurnovers;
 
   virtual ~DataRecorder() {}
 };
