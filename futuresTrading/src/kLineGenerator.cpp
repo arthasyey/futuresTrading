@@ -74,7 +74,9 @@ vector<string> KLineGenerator::getKLineTimesInBetween(const string& start, const
 }
 
 void KLineGenerator::feedTickData(CThostFtdcDepthMarketDataField * p) {
+  preTick = curTick;
   generateOneMinuteKLine(p);
+  curTick = *p;
 }
 
 void KLineGenerator::feedOneMinuteKLine(const KLine& oneMinuteKLine) {
@@ -121,8 +123,6 @@ void KLineGenerator::generateOneMinuteKLine(CThostFtdcDepthMarketDataField *p) {
   if(FuturesUtil::getExchangeFromSymbol(symbol) == CFFEX && kLineTime == "09:15:00")
     kLineTime = "09:16:00";
   if (timeToOneMinuteKLinesMap.find(kLineTime) != timeToOneMinuteKLinesMap.end()) {
-      preTick = curTick;
-      curTick = *p;
       timeToOneMinuteKLinesMap[kLineTime].feedTick(p, preTick.Volume);
 
       if (kLineTime != lastOneMinuteKLineTime) {
