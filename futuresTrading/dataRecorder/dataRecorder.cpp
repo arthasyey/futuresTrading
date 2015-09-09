@@ -197,3 +197,10 @@ void DataRecorder::initTables() {
   string query = (boost::format(CREATE_KLINE_TABLE_QUERY) % FuturesUtil::getCurrentDateString()).str();
   mysqlConnector.executeUpdate(query);
 }
+
+
+void DataRecorder::finalize() {
+  for(auto i = klineGenerators.begin(); i != klineGenerators.end(); ++i) {
+      i->second->OnOneMinuteKLineInserted();
+  }
+}

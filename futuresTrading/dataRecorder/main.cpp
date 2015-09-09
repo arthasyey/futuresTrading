@@ -1,6 +1,5 @@
 #include "dataRecorder.h"
 
-#include <iomanip>
 #include <thread>
 #include <chrono>
 #include <ctime>
@@ -11,13 +10,11 @@ void terminateThread() {
   std::time_t tt = system_clock::to_time_t (system_clock::now());
 
   struct std::tm * ptm = std::localtime(&tt);
-  std::cout << "Current time: " << std::put_time(ptm,"%X") << '\n';
 
   ptm->tm_hour = 15;
   ptm->tm_min = 30;
   ptm->tm_sec=0;
   std::this_thread::sleep_until (system_clock::from_time_t (mktime(ptm)));
-  std::cout << std::put_time(ptm,"%X") << " reached!\n";
 }
 
 
@@ -30,5 +27,6 @@ int main(int argc, char* argv[]) {
 
   t.join();
 
-  dataRecorder.OnOneMinuteKLineInserted();
+  cout << "15:30 has reached!\n";
+  dataRecorder.finalize();
 };

@@ -71,6 +71,7 @@ public:
   map<string, int> accuVolumes;
   map<string, double> lastAggregateAvgPrice;
 
+  void finalize();
   virtual ~DataRecorder() {}
 };
 
