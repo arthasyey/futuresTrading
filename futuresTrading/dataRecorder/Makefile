@@ -5,7 +5,7 @@ SOURCES=main.cpp dataRecorder.cpp ../src/FuturesUtil.cpp ../src/logging.cpp ../s
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=dataRecorder.exe
 
-LIBS += -L../libs -lboost_system -lboost_filesystem -lboost_date_time -lboost_thread -lboost_log_setup -lboost_log -lpthread -ldl -ljson-c -lmysqlcppconn -lthostmduserapi -lthosttraderapi  
+LIBS += -L../libs -lboost_system -lboost_filesystem -lboost_date_time -lboost_thread -lboost_log_setup -lboost_log -lpthread -ldl -ljson-c -lmysqlcppconn -lthostmduserapi -lthosttraderapi -lboost_chrono
 INCLUDES += -I../ctp -I../include -Wl,-rpath=.
 
 all: $(SOURCES) $(EXECUTABLE)
